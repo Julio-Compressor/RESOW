@@ -1,0 +1,9 @@
+body {
+    height: 100vh;
+    background-color:#00000054;
+    background-image: url(../images/home_background.jpg);
+    background-blend-mode: overlay;
+    background-position: center, center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

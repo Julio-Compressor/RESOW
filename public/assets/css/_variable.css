@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Haext_Plain";
+    src: url(../font/Haext_Plain.otf) format("opentype");
+}
+@font-face {
+    font-family: "NordiqueRegular";
+    src: url(../font/Nordique-Regular.ttf) format("opentype");
+}
+:root {
+    --nav-font: "Haext_Plain";
+    --nav-font-2: "NordiqueRegular";
+}
