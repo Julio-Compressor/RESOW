@@ -1,9 +1,24 @@
 body {
-    height: 100vh;
+
+    min-height: 100vh;
+    margin: 0;
     background-color:#00000054;
     background-image: url(../images/home_background.jpg);
     background-blend-mode: overlay;
-    background-position: center, center;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+    
+    
+    
+   
+    
+    
+}
+.contenu {
+    height: 50vh;
+    width: 50vw;
+    margin: auto;
+    overflow: scroll;
 }

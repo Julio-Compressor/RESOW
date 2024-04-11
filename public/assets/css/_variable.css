@@ -6,7 +6,17 @@
     font-family: "NordiqueRegular";
     src: url(../font/Nordique-Regular.ttf) format("opentype");
 }
+@font-face {
+    font-family: "boneface";
+    src: url(../font/Boneface.ttf) format("opentype");
+}
+@font-face {
+    font-family: "futura";
+    src: url(../font/FuturaPT-Book.ttf) format("opentype");
+}
 :root {
     --nav-font: "Haext_Plain";
     --nav-font-2: "NordiqueRegular";
+    --primary-font:"futura";
+    --title-font: "boneface";
 }
