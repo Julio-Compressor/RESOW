@@ -11,4 +11,17 @@
 {
     font-family: var(--nav-font);
     font-size: 1.4rem;
+    z-index: 1000;
+}
+.link li .home_nav{
+    color: var(--vert);
+}
+.link li .discobio_nav{
+    color: var(--rose);
+}
+.link li .shop_nav {
+    color: var(--bleu);
+}
+.link li .contact_nav {
+    color: var(--jaune);
 }
