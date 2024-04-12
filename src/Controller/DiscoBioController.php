@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\DiscoBioManager;
+
 class DiscoBioController extends AbstractController
 {
     /**
@@ -9,6 +11,9 @@ class DiscoBioController extends AbstractController
      */
     public function index(): string
     {
-        return $this->twig->render('DiscoBio/discoBio.html.twig');
+        $albumTable = new DiscoBioManager();
+        $albums = $albumTable->selectAll();
+
+        return $this->twig->render('DiscoBio/discoBio.html.twig', ['albums' => $albums]);
     }
 }

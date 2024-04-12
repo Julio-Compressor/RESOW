@@ -1,24 +1,26 @@
 body {
-
+    
     min-height: 100vh;
     margin: 0;
-    background-color:#00000054;
+    background-color:#0000007d;
     background-image: url(../images/home_background.jpg);
     background-blend-mode: overlay;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    
-    
-    
-   
-    
+}
+h1, h2, h3 {
+    font-family: var(--title-font);
     
 }
-.contenu {
-    height: 50vh;
-    width: 50vw;
-    margin: auto;
-    overflow: scroll;
+h1 {
+    font-size: 2.2rem;
 }
+main
+{
+    font-family: var(--primary-font);
+    font-size: 20px;
+    color: var(--white);
+}
+

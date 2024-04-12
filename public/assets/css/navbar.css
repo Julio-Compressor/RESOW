@@ -14,14 +14,14 @@
     z-index: 1000;
 }
 .link li .home_nav{
-    color: #7bdc8d;
+    color: var(--vert);
 }
 .link li .discobio_nav{
-    color: #c1acb4;
+    color: var(--rose);
 }
 .link li .shop_nav {
-    color: #afe1ec;
+    color: var(--bleu);
 }
 .link li .contact_nav {
-    color: #f6fda3;
+    color: var(--jaune);
 }
