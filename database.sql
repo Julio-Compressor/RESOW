@@ -34,12 +34,14 @@ CREATE TABLE `album` (
     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `title` VARCHAR(250) NOT NULL, `type` VARCHAR(250) NOT NULL, `nb_track` INT NOT NULL, `price` FLOAT NOT NULL, `date` DATE NOT NULL, `description` TEXT NULL
 );
 
+TRUNCATE TABLE album;
+
 INSERT INTO
     `album` (
         `title`, `type`, `nb_track`, `price`, `date`, `description`
     )
 VALUES (
-        'Two Years Overdue', 'Vinyle Black', '5', '29.99', '2023-04-03', ''
+        'Two Years Overdue', 'Vinyle Black', '5', '29.99', '2023-04-03', 'Standart Edition'
     ),
     (
         'Two Years Overdue', 'Vinyle Silver', '5', '35', '2023-04-03', 'Bonus 3 B-side tracks'
@@ -48,7 +50,10 @@ VALUES (
         'Two Years Overdue', 'Vinyle Gold', '5', '49.99', '2023-04-03', 'LIMITED + 3 B-side tracks'
     ),
     (
-        'Two Years Overdue', 'CD', '5', '14.99', '2023-04-03', ' '
+        'Two Years Overdue', 'CD', '5', '14.99', '2023-04-03', 'Standart Edition '
+    ),
+    (
+        'Two Years Overdue', 'Demat\'', '5', '19.99', '2023-04-03', 'Format WAV & FLAC'
     );
 
 CREATE TABLE `item` (
