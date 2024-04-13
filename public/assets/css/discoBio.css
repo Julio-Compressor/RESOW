@@ -14,29 +14,39 @@
     overflow: -moz-scrollbars-none; 
 }
 .bio {
-    min-height: fit-content;
-    width: 50vw;
+    
+    width: 765px;
 }
 
 .bio h1 {
     color: var(--rose);
     margin-top: 1rem;
+    margin-bottom: 3rem;
+    text-align: center;
 }
 
 .disco {
-    width: 70vw;
+    width: 1200px;
+    margin:auto;
 
 }
+
+.bio p {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
 .card.text-center {
     color: var(--white);
     background-color: transparent;
     font-family: var(--primary-font);
     border: none;
-    max-width: 395px;
+    max-width: 282px;
+    margin-bottom: 4rem;
+
 }
 img.card-img-top{
-    padding: 0.5rem;
-    min-width: 250px;
+    max-height: 187px;
 }
 a.btn.btn-primary{
     background-color: var(--bleu);
@@ -46,13 +56,6 @@ a.btn.btn-primary{
 .row {
     justify-content: center;
 }
-h5.card-title {
-    font-family: var(--primary-font);
-    font-size: 20px;
-}
 p.card-text {
-    margin-bottom: 0.5rem;
-}
-.bio p {
-    margin-bottom: 4rem;
+    margin-bottom: 0.25rem;
 }
