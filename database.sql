@@ -87,6 +87,42 @@ ALTER TABLE `item` ADD PRIMARY KEY (`id`);
 --
 ALTER TABLE `item`
 MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 3;
+
+--
+-- Structure de la table `onTour`
+--
+CREATE TABLE `events` (
+    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `city` VARCHAR(100) NOT NULL, `place` VARCHAR(100) NOT NULL, `date` DATE NOT NULL, `isSoldout` BOOL NOT NULL
+);
+
+TRUNCATE TABLE `events`;
+
+INSERT INTO
+    `events` (
+        `city`, `place`, `date`, `isSoldout`
+    )
+VALUES (
+        'EVREUX', 'Le Kubb', '2024-04-29', false
+    ),
+    (
+        'PARIS', 'La Maroquinerie', '2024-05-18', false
+    ),
+    (
+        'LYON', 'La Machine', '2024-06-09', false
+    ),
+    (
+        'LILLE', 'Le Bidule', '2024-07-25', true
+    ),
+    (
+        'STRASBOURG', 'La Laiterie', '2024-08-14', false
+    ),
+    (
+        'MARSEILLE', 'La Magalone', '2024-09-10', false
+    ),
+    (
+        'BORDEAUX', 'Arkea Arena', '2024-10-11', false
+    );
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
 ;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */
