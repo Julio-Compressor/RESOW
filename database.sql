@@ -60,7 +60,7 @@ CREATE TABLE `article` (
     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `name` VARCHAR(250) NOT NULL, `price` FLOAT NOT NULL, `description` TEXT NULL, category_id INT NOT NULL REFERENCES `category_article` (id), `img_name` VARCHAR(250) NOT NULL
 );
 
-DROP TABLE article;
+-- DROP TABLE article;
 
 TRUNCATE TABLE article;
 
@@ -88,7 +88,7 @@ CREATE TABLE `category_article` (
     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `name` VARCHAR(250) NOT NULL
 );
 
-DROP TABLE `category_article`;
+-- DROP TABLE `category_article`;
 
 INSERT INTO
     `category_article` (`name`)
