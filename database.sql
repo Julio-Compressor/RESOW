@@ -1,4 +1,4 @@
--- Active: 1711385285915@@127.0.0.1@3306@straszik
+-- Active: 1713169810273@@127.0.0.1@3306@straszik
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
@@ -102,25 +102,31 @@ INSERT INTO
         `city`, `place`, `date`, `isSoldout`
     )
 VALUES (
-        'EVREUX', 'Le Kubb', '2024-04-29', false
-    ),
-    (
-        'PARIS', 'La Maroquinerie', '2024-05-18', false
-    ),
-    (
-        'LYON', 'La Machine', '2024-06-09', false
+        'EVREUX', 'Le Kubb', '2024-04-27', false
     ),
     (
         'LILLE', 'Le Bidule', '2024-07-25', true
     ),
     (
-        'STRASBOURG', 'La Laiterie', '2024-08-14', false
+        'PARIS', 'La Maroquinerie', '2024-05-18', false
     ),
     (
-        'MARSEILLE', 'La Magalone', '2024-09-10', false
+        'STRASBOURG', 'La Laiterie', '2024-06-08', false
     ),
     (
-        'BORDEAUX', 'Arkea Arena', '2024-10-11', false
+        'LYON', 'Le Farmer', '2024-08-17', false
+    ),
+    (
+        'MARSEILLE', 'La Magalone', '2024-08-31', false
+    ),
+    (
+        'NICE', 'Palais Nkaïa', '2024-09-07', false
+    ),
+    (
+        'BORDEAUX', 'Arkea Arena', '2024-09-21', true
+    ),
+    (
+        'NANTES', 'Warehouse', '2024-10-05', false
     );
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */

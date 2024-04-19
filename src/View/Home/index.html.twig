@@ -27,17 +27,15 @@
                 </div>
             </div>
         </nav>
-        <section>
-            <h1>ON TOUR !</h1>
+        <h1>ON TOUR !</h1>
+            <section>
                 <div class="events">
-            
-                {% for event in events %}
-                    <ul>
-                        <li><a href="#">{{ event.city ~ " - " ~ event.place ~ " - " }}</a></li>
-                        <li class="scaling"><a href="">{{ event.date }}</a></li>
-                    </ul>
-                {% endfor %}
-            </div>
-        </section>    
+                    {% for event in events %}
+                        <ul>
+                            <li class="scaling"><div class="soldout"><img class="tampon" src="{% if event['isSoldout'] == true %} ../assets/images/soldout.png {% endif %}" alt="" ></div><a href="#">{{ event.city ~ " - " ~ event.place ~ " - " ~ event.date }}</a></li>
+                        </ul>
+                    {% endfor %}
+                </div>
+            </section>    
 </body>
 {% endblock %}
