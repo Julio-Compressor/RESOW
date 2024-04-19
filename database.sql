@@ -1,4 +1,4 @@
--- Active: 1711385285915@@127.0.0.1@3306@straszik
+-- Active: 1713169810273@@127.0.0.1@3306@straszik
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
@@ -87,6 +87,48 @@ ALTER TABLE `item` ADD PRIMARY KEY (`id`);
 --
 ALTER TABLE `item`
 MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 3;
+
+--
+-- Structure de la table `onTour`
+--
+CREATE TABLE `events` (
+    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `city` VARCHAR(100) NOT NULL, `place` VARCHAR(100) NOT NULL, `date` DATE NOT NULL, `isSoldout` BOOL NOT NULL
+);
+
+TRUNCATE TABLE `events`;
+
+INSERT INTO
+    `events` (
+        `city`, `place`, `date`, `isSoldout`
+    )
+VALUES (
+        'EVREUX', 'Le Kubb', '2024-04-27', false
+    ),
+    (
+        'LILLE', 'Le Bidule', '2024-07-25', true
+    ),
+    (
+        'PARIS', 'La Maroquinerie', '2024-05-18', false
+    ),
+    (
+        'STRASBOURG', 'La Laiterie', '2024-06-08', false
+    ),
+    (
+        'LYON', 'Le Farmer', '2024-08-17', false
+    ),
+    (
+        'MARSEILLE', 'La Magalone', '2024-08-31', false
+    ),
+    (
+        'NICE', 'Palais Nkaïa', '2024-09-07', false
+    ),
+    (
+        'BORDEAUX', 'Arkea Arena', '2024-09-21', true
+    ),
+    (
+        'NANTES', 'Warehouse', '2024-10-05', false
+    );
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
 ;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */
