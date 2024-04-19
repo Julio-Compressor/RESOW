@@ -1,4 +1,5 @@
--- Active: 1713169810273@@127.0.0.1@3306@straszik
+
+-- Active: 1713169372026@@127.0.0.1@3306@straszik
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
@@ -55,6 +56,15 @@ VALUES (
     (
         'Two Years Overdue', 'Demat\'', '5', '19.99', '2023-04-03', 'Format WAV & FLAC'
     );
+
+
+-- Contenu de la table user --
+
+CREATE TABLE `user` (
+     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `firstname` VARCHAR(50) NOT NULL, `lastname` VARCHAR(50) NOT NULL, `password` VARCHAR(255) NOT NULL, `email` VARCHAR(100) NOT NULL, `address` VARCHAR(255) NOT NULL, `address2` VARCHAR(255) NOT NULL, `zip_code` INT NOT NULL, `pays` VARCHAR(60) NOT NULL,`phone` INT NOT NULL,`
+is_newsletter` BOOL NULL, `is_admin` BOOL NULL
+);
+
 
 CREATE TABLE `item` (
     `id` int(11) UNSIGNED NOT NULL, `title` varchar(255) NOT NULL
