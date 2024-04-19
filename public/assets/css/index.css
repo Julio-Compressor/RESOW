@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+}
+
+.body_background {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.body_background video {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: -100;
+    transform: translate(-50%, -50%);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--title-font);
+}
+
+h1 {
+    font-size: 2.2rem;
+    color: var(--white);
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.uk-navbar-container {
+    height: 50vh;
+}
+
+.uk-navbar-nav>li>a {
+    font-family: var(--nav-font);
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.uk-navbar-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: end;
+    padding: 0.5rem 1rem;
+}
+
+.uk-navbar-item-uk-logo {
+    margin: 2rem auto 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.uk-navbar-nav-link {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.uk-navbar-nav-link li a {
+    font-family: var(--nav-font);
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.uk-navbar-nav-link li .home_nav {
+    color: var(--vert);
+}
+
+.uk-navbar-nav-link li .discobio_nav {
+    color: var(--rose);
+}
+
+.uk-navbar-nav-link li .shop_nav {
+    color: var(--bleu);
+}
+
+.uk-navbar-nav-link li .contact_nav {
+    color: var(--jaune);
+}
+
+section {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    width: 70vw;
+    margin: 0 auto;
+}
+
+.events {
+    width: 40vw;
+    overflow: auto;
+    scrollbar-width: none;
+    height: 350px;
+}
+
+.events::-webkit-scrollbar {
+    display: none;
+}
+
+.events ul {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+}
+
+.events ul li {
+    margin: 1rem;
+}
+
+.events ul li a {
+    font-family: var(--primary-font);
+    text-decoration: none;
+    color: var(--white);
+    font-size: 22px;
+}
+
+.scaling {
+    position: relative;
+
+    z-index: 0;
+}
+
+.soldout {
+    position: absolute;
+    z-index: 10;
+    transform: translate(100%, -80%);
+    scale: 0.5;
+
+}
+
+.tampon {}
+
+@media (hover:hover) {
+    .scaling:hover {
+        transform: scale(1.1);
+    }
+}
