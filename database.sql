@@ -1,4 +1,4 @@
--- Active: 1713169810273@@127.0.0.1@3306@straszik
+-- Active: 1711385285915@@127.0.0.1@3306@straszik
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
@@ -55,6 +55,50 @@ VALUES (
     (
         'Two Years Overdue', 'Demat\'', '5', '19.99', '2023-04-03', 'Format WAV & FLAC'
     );
+
+CREATE TABLE `article` (
+    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `name` VARCHAR(250) NOT NULL, `price` FLOAT NOT NULL, `description` TEXT NULL, category_id INT NOT NULL REFERENCES `category_article` (id), `img_name` VARCHAR(250) NOT NULL
+);
+
+DROP TABLE article;
+
+TRUNCATE TABLE article;
+
+INSERT INTO
+    `article` (
+        `name`, `price`, `description`, `category_id`, `img_name`
+    )
+VALUES (
+        'T-Shirt Homme', '19.99', '', 1, 'tshirt_homme_noir'
+    ),
+    (
+        'Sweat Shirt', '39.99', '', 4, 'sweat_noir'
+    ),
+    (
+        'Casquette', '24.99', '', 5, 'casquette_noir'
+    ),
+    (
+        'Grinder Multi', '15', '', 7, 'grinder'
+    ),
+    (
+        'Briquet RESOW', '5.20', '', 6, 'briquet'
+    );
+
+CREATE TABLE `category_article` (
+    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `name` VARCHAR(250) NOT NULL
+);
+
+DROP TABLE `category_article`;
+
+INSERT INTO
+    `category_article` (`name`)
+VALUES ('tshirt_homme'),
+    ('tshirt_femme'),
+    ('shirt_femme'),
+    ('sweat'),
+    ('casquette'),
+    ('briquet'),
+    ('other');
 
 CREATE TABLE `item` (
     `id` int(11) UNSIGNED NOT NULL, `title` varchar(255) NOT NULL
