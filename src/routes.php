@@ -9,6 +9,7 @@
 return [
     '' => ['IndexController', 'index',],
     'discoBio' => ['DiscoBioController', 'index'],
+    'shop' => ['ShopController', 'index'],
     'items' => ['ItemController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],

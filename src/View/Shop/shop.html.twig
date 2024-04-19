@@ -1,0 +1,45 @@
+{% extends 'layout.html.twig' %}
+{% block title %}RESOW | Shop{% endblock %}
+{% block content %}
+    <section class="ariticle-shop">
+            <div class="row">
+                {% for article in articles %}
+                    <form method="post"  class="col-sm-4 mb-3 mb-sm-0" action="#">
+                        <div class="card text-center">
+                            <div class="card-img-top">
+                                <img src="..\assets\images\guddies\{{article.nameCat}}\{{article.img_name}}.png"  name="{{article.nameCat}}" id="{{article.nameCat}}" alt="{{article.name}}" onclick="openImage({{article.id}})">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{article.name}}</h5>
+                                {% if article.category_id <= 6 %}
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        {% for color in colors %}
+                                        <input type="radio" class="btn-check" name="color" id="{{color}}" value="{{color}}" autocomplete="off" checked>
+                                        <label class="btn btn-secondary" for="{{color}}">{{color}}</label>
+                                        {% endfor %}
+                                    </li>
+                                    {% if article.category_id < 5 %}
+                                    <li class="list-group-item">
+                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group" id="{{article.id}}">
+                                        {% for size in sizes %}
+                                                <input type="radio" class="btn-check" name="size" id="{{article.id}}-{{size}}" value="{{size}}" autocomplete="off" checked>
+                                                <label class="btn btn-outline-primary" for="{{article.id}}-{{size}}">{{size}}</label>
+                                        {% endfor %}
+                                            </div>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                                {% endif %}
+                                <p class="card-text">{{article.price}} €</p>
+                                <input type="hidden" name="id" value="{{article.id}}">
+                                <button class="btn btn-primary" type="submit">Panier</button>
+                            </div>
+                        </div>
+                    </form>
+                {% endfor %}
+            </div>
+    </section>
+{% endblock %}
+{# {% block javascript %}
+{% endblock %} #}
