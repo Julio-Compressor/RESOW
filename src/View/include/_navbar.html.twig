@@ -15,7 +15,12 @@
             </div>
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav">
-                    <li><a href="register" style="font-size: 1.1rem;">Login</a></li>
+                {% if user %}
+                <li>{{ user.name }}</li>
+                {% else %}
+                    <li><a href="/login" style="font-size: 1.1rem;">Login</a></li>
+                    <li><a href="/register" style="font-size: 1.1rem;">register</a></li>
+                    {% endif %}
                     <li><a href="#" style="font-size: 1.1rem;">panier</a></li>
                 </ul>
             </div>
