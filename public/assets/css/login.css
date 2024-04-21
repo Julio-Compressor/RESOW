@@ -1,0 +1,10 @@
+.card-body{
+background-color: rgba(0, 0, 0, 0.61);
+border-radius: 2rem;
+}
+
+html { overflow-y: hidden; } 
+
+.bg-dark{
+    --bs-bg-opacity: 0;
+}
