@@ -14,11 +14,16 @@ class UserController extends AbstractController
             $user = $userManager->selectOneByEmail($credentials['email']);
             if ($user && password_verify($credentials['password'], $user['password'])) {
                 $_SESSION['user_id'] = $user['id'];
+
+
+                // var_dump($_SESSION);
+                // die();
                 header('location: /');
                 exit();
             }
         }
-        return $this->twig->render('User/login.html.twig');
+    
+        return $this->twig->render('User/login.html.twig') ;
     }
 
     public function register()
