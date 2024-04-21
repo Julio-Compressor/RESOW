@@ -1,0 +1,105 @@
+.ariticle-shop {
+    margin: auto;
+    height: 80vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ariticle-shop .row {
+    justify-content: center;
+    width: 60vw;
+    margin-top: 3rem;
+}
+.card.text-center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.card-img-top {
+    max-height: 186px;
+    
+}
+.card-img-top img {
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+.card-img-top img:hover {
+    transform: scale(1.4); /* Zoom de 120% au survol */
+}
+.ariticle-shop form.col-sm-4.mb-3.mb-sm-0 {
+    display: flex;
+    justify-content: center;
+}
+li.list-group-item {
+    background: transparent;
+}
+
+li.list-group-item label.btn.btn-secondary:nth-of-type(1) {
+    background-color: black;
+    color: black;
+    box-shadow: 0px 0px 3px 0px #6b6b6b; 
+}
+li.list-group-item label.btn.btn-secondary:nth-of-type(1):hover {
+    background-color: rgba(0, 0, 0, 0.306);
+    opacity: 0.65;
+
+}
+li.list-group-item label.btn.btn-secondary:nth-of-type(2) {
+    background-color: var(--bleu);
+    color: var(--bleu);
+    box-shadow: 0px 0px 3px 0px #6b6b6b; 
+
+}
+li.list-group-item label.btn.btn-secondary:nth-of-type(2):hover {
+    background-color: var(--bleu);
+    opacity: 0.65;
+
+}
+li.list-group-item label.btn.btn-secondary:nth-of-type(3) {
+    background-color: var(--jaune);
+    color: var(--jaune);
+    box-shadow: 0px 0px 3px 0px #6b6b6b; 
+
+}
+li.list-group-item label.btn.btn-secondary:nth-of-type(3):hover {
+    background-color: var(--jaune);
+    opacity: 0.65;
+}
+li.list-group-item label.btn.btn-secondary:nth-of-type(4) {
+    background-color: var(--rose);
+    color: var(--rose);
+    box-shadow: 0px 0px 3px 0px #6b6b6b; 
+
+}
+li.list-group-item label.btn.btn-secondary:nth-of-type(4):hover {
+    background-color: var(--rose);
+    opacity: 0.65;
+}
+li.list-group-item label.btn.btn-secondary:nth-of-type(5) {
+    background-color: var(--vert);
+    color: var(--vert);
+    box-shadow: 0px 0px 3px 0px #6b6b6b; 
+
+}
+li.list-group-item label.btn.btn-secondary:nth-of-type(5):hover {
+    background-color: var(--vert);
+    opacity: 0.65;
+}
+li.list-group-item label.btn.btn-secondary {
+    font-size: 1px;
+    width: 30px;
+    height: 30px;
+    border-radius: 22px;
+    border: none;
+    margin: 0px 4px
+}
+.card-body {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
