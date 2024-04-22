@@ -69,7 +69,7 @@ INSERT INTO
         `name`, `price`, `description`, `category_id`, `img_name`
     )
 VALUES (
-        'T-Shirt Homme', '19.99', '', 1, 'tshirt_homme_noir'
+        'T-Shirt Homme', '19.99', '', 1, 'tshirt_homme-noir'
     ),
     (
         'Sweat Shirt', '39.99', '', 4, 'sweat_noir'
