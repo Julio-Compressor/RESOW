@@ -4,20 +4,26 @@
             <div class="uk-navbar-item uk-logo">
                 <img src="/../../../assets/images/logo_header.png">
             </div>
-            <div class="uk-navbar-center">
-                <ul class="uk-navbar-nav link">
-                    <li><a href="/" class="home_nav">Home</a></li>
-                    <li><a href="discoBio" class="discobio_nav">DiscoBio</a></li>
-                    <li><a href="shop" class="shop_nav">Shop</a></li>
-                    <li><a href="#" class="contact_nav">Contact</a></li>
-                </ul>
-
-            </div>
-            <div class="uk-navbar-right">
-                <ul class="uk-navbar-nav">
-                    <li><a href="register" style="font-size: 1.1rem;">Login</a></li>
-                    <li><a href="#" style="font-size: 1.1rem;">panier</a></li>
-                </ul>
+                    <div class="uk-navbar-center">
+                        <ul class="uk-navbar-nav link">
+                            <li><a href="/" class="home_nav">Home</a></li>
+                            <li><a href="discoBio" class="discobio_nav">DiscoBio</a></li>
+                            <li><a href="shop" class="shop_nav">Shop</a></li>
+                            <li><a href="#" class="contact_nav">Contact</a></li>
+                        </ul>
+                    </div>
+                <div class="uk-navbar-right"> 
+                    <ul class="uk-navbar-nav">
+                        {% if user %}
+                         <li><a href="/">{{user.firstname}}</a></li>
+                        <li><a href="/">Compte</a></li>
+                        <li><a href="/logout"><img src="..\assets\images\deco.png" width="30px" height="30px"/></a></li>
+                        {% else %}
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/">register</a></li>
+                        {% endif %}
+                        <li><a href="#">panier</a></li>
+                    </ul>
             </div>
         </div>
     </div>
