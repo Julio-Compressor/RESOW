@@ -18,5 +18,6 @@ return [
     'register' => ['UserController', 'register',],
     'login' => ['UserController', 'login',],
     'logout' => ['UserController', 'logout',],
-
+    'cart' => ['CartController', 'insertAlbumById', ['id']],
+    'cart' => ['CartController', 'index'],
 ];
