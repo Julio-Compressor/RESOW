@@ -1,10 +1,30 @@
 .card-body{
 background-color: rgba(0, 0, 0, 0.61);
 border-radius: 2rem;
+width: 30rem;
 }
 
 html { overflow-y: hidden; } 
 
 .bg-dark{
     --bs-bg-opacity: 0;
+    color: white;
+    border-radius: 1rem;
+}
+
+.text-uppercase {
+    text-transform: uppercase !important;
+    text-align: center;
+}
+
+.text-white-50 {
+    --bs-text-opacity: 1;
+    color: rgba(255, 255, 255, .5) !important;
+    text-align: center;
+}
+
+.form-label {
+    margin-bottom: .5rem;
+    display: flex;
+    justify-content: center;
 }
