@@ -22,8 +22,7 @@ class UserController extends AbstractController
                 exit();
             }
         }
-    
-        return $this->twig->render('User/login.html.twig') ;
+        return $this->twig->render('User/login.html.twig');
     }
 
     public function register()
@@ -36,5 +35,12 @@ class UserController extends AbstractController
             }
         }
         return $this->twig->render('User/register.html.twig');
+    }
+
+    public function logout()
+    {
+         $_SESSION = [];
+        header('location: /');
+        exit();
     }
 }
