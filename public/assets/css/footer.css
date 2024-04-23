@@ -1,6 +1,19 @@
+footer {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
 .footer {
     height: 4rem;
     margin: 0 0;
+    width: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
 }
 
 .footer .ul {
@@ -12,10 +25,15 @@
     margin-bottom: 0;
 }
 
-.footer ul li {
+.footer .ul li {
     font-family: var(--nav-font-2);
-    text-decoration: none;
     list-style: none;
+
+}
+
+.footer .ul li a {
+    text-decoration: none;
+    color: var(--jaune);
 }
 
 span {
@@ -28,7 +46,6 @@ span {
     display: flex;
     flex-direction: row;
     gap: 1rem;
-
 }
 
 .bi.bi-facebook {

@@ -13,8 +13,6 @@ body {
     background-color: black;
 }
 
-
-
 body video {
     position: absolute;
     min-width: 100%;
@@ -110,12 +108,16 @@ main {
     height: 40vh;
 }
 
-section {
+.liste {
     height: 30vh;
     display: flex;
     justify-content: center;
     width: 70vw;
     margin: 0 auto;
+}
+
+.liste>* {
+    position: absolute;
 }
 
 .events {
