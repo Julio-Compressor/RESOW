@@ -1,0 +1,48 @@
+.footer {
+    height: 4rem;
+    margin: 0 0;
+}
+
+.footer .ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.footer ul li {
+    font-family: var(--nav-font-2);
+    text-decoration: none;
+    list-style: none;
+}
+
+span {
+    font-family: var(--primary-font);
+    color: var(--white);
+    list-style: none;
+}
+
+.liens_reseau {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+}
+
+.bi.bi-facebook {
+    color: var(--bleu);
+}
+
+.bi.bi-spotify {
+    color: var(--vert);
+}
+
+.bi.bi-instagram {
+    color: pink;
+}
+
+.bi.bi-music-note-beamed {
+    color: #F54E66;
+}
