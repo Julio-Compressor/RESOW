@@ -59,7 +59,7 @@ VALUES (
 CREATE TABLE `form` (
     `id` INT PRIMARY KEY AUTO_INCREMENT, `name` VARCHAR (100) NOT NULL, `firstname` VARCHAR (100) NOT NULL, `email` VARCHAR(100), `particulier` BOOLEAN NULL, `professionnel` BOOLEAN NULL, `message` TEXT NOT NULL 
 )
-
+;
 CREATE TABLE `item` (
     `id` int(11) UNSIGNED NOT NULL, `title` varchar(255) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
