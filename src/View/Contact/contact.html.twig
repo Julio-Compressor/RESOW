@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+{% block title %}RESOW | Contact{% endblock %}
+{% block content %}
+    <main class='form'>
+        <section class="ContactForm">
+        <h1>Formulaire de contact</h1>
+        <form method="post">
+            <label class='name' for="name">Nom</label>
+                <input type="text" id="name" name="name">
+
+            <label class='firstname' for="firstname">Prénom</label>
+                <input type="text" id="firstname" name="firstname">
+
+            <label class='email' for="email">E-mail</label>
+                <input type="email" id="email" name="email">
+
+            <fieldset>
+                <legend>Vous êtes un :</legend>
+                    <label class='part' for="Particulier">Particulier</label>
+                        <input class ="particulier" type="checkbox" id="particulier" name="particulier">
+                    <label class='pro'for="Professionnel">Professionnel</label>    
+                        <input class="professionnel" type="checkbox" id="professionnel" name="professionnel">
+            </fieldset>
+
+            <label class='message' for="Message">Message</label>
+                <textarea name='message'></textarea>
+
+                <input class='bouton' type="submit" value="Envoyer">
+        </form>
+        </section>
+    </main>
+
+    {% endblock %}
