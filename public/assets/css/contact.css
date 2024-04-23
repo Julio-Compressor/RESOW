@@ -1,4 +1,4 @@
-.form {
+.FormContact {
     background-color: #0000009e;
     display: flex;
     flex-direction: column;
@@ -7,17 +7,17 @@
     border-radius: 20px;
 }
 
-form {
+.formulaire {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-h1 {
+.Titrecontact {
     color: var(--jaune);
 }
 
-input {
+.formulaire input {
     background-color: white;
     border-radius: 20px;
 }
@@ -34,18 +34,18 @@ input {
 .message {
     padding: 30px;
 }
-.bouton {
+.ContactBouton {
     padding: 10px;
     margin: 30px;
 }
 
-textarea {
+.ContactMessage {
     height: 300px;
     width: 400px;
     border-radius: 20px;
 }
 
-fieldset {
+.statut {
     display: flex;
     flex-direction: row;
     align-items:center;
