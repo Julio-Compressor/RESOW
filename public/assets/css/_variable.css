@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "Haext_Plain";
+    src: url(../font/Haext_Plain.otf) format("opentype");
+}
+@font-face {
+    font-family: "NordiqueRegular";
+    src: url(../font/Nordique-Regular.ttf) format("opentype");
+}
+@font-face {
+    font-family: "boneface";
+    src: url(../font/Boneface.ttf) format("opentype");
+}
+@font-face {
+    font-family: "futura";
+    src: url(../font/FuturaPT-Book.ttf) format("opentype");
+}
+/* Police */
+:root {
+    --nav-font: "Haext_Plain";
+    --nav-font-2: "NordiqueRegular";
+    --primary-font:"futura";
+    --title-font: "boneface";
+    /* couleur */
+    --vert:#8affa0;
+    --rose:#ee8db2;
+    --bleu:#afe1ec;
+    --jaune:#f6fda3;
+    --white:#c2c2c2;
+}

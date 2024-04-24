@@ -1,0 +1,61 @@
+.contenu-discobio {
+    margin: auto;
+    height: 80vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contenu-discobio::-webkit-scrollbar {
+    display: none;
+  }
+.contenu-discobio {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+.bio {
+    
+    width: 765px;
+}
+
+.bio h1 {
+    color: var(--rose);
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.disco {
+    width: 1200px;
+    margin:auto;
+
+}
+
+.bio p {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.card.text-center {
+    color: var(--white);
+    background-color: transparent;
+    font-family: var(--primary-font);
+    border: none;
+    max-width: 282px;
+    margin-bottom: 4rem;
+
+}
+img.card-img-top{
+    max-height: 187px;
+}
+a.btn.btn-primary{
+    background-color: var(--bleu);
+    border: none;
+    color: black;
+}
+.row {
+    justify-content: center;
+}
+p.card-text {
+    margin-bottom: 0.25rem;
+}
