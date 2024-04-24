@@ -1,0 +1,36 @@
+.card-body {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 20rem;
+    align-items: center;
+    align-content: center;
+    background-color: rgba(0, 0, 0, 0.61);
+    border-radius: 2rem;
+    width: 30rem;
+    height: 45rem;
+}
+
+.form-control-lg {
+    min-height: calc(1.5em + 1rem + calc(var(--bs-border-width)* 2));
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    border-radius: var(--bs-border-radius-lg);
+    width: 25rem;
+    display: flex;
+}
+
+
+    .bg-dark {
+        --bs-bg-opacity: 1;
+        background-color: rgb(25 25 25 / 0%) !important;
+        width: 25rem;
+    }
+
+    h1, h2, h3 {
+        font-family: var(--title-font);
+        margin-top: 5rem;
+
+    }
+    
