@@ -1,10 +1,39 @@
 {% extends 'layout.html.twig' %}
 {% block title %}RESOW | Cart{% endblock %}
 {% block content %}
-{{ dump(session) }}
-<ul class="list-group list-group-horizontal">
-  <li class="list-group-item">An item</li>
-  <li class="list-group-item">A second item</li>
-  <li class="list-group-item">A third item</li>
-</ul>
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th class="bdr-hg" scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"><h3>Article</h3></th>
+      <th class="bdr-hd" scope="col"><h3>Prix</h3></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% set total  = 0 %}
+    {% for key, cart in carts  %}
+        {% if key != 0 %}
+        <tr class="tr-{{ key }}">
+            <td class="col0">{{ key }} </td>
+            <td class="col1">
+                <div class="album_img">
+                    <img src="..\assets\images\album\vinyl_{{cart.id}}.png" class="card-img-top" alt="...">
+                </div>
+            </td>
+            <td class="col2">{{ cart.title }} | {{ cart.type }}</td>
+            <td class="col3">{{ cart.price * cart.qty }} €</td>
+            <td class="col4"> {{cart.qty}} </td>
+            <td class="col5"><a class="btn btn-primary" href="/cart/delete?id={{ cart.id }}" role="button">Delete</a></td>
+        </tr>
+        {% endif %}
+        {% set total = total + cart.price * cart.qty %}
+    {% endfor %}
+        <tr class="tr-total">
+            <td class="toto" colspan="2"></td>
+            <td class="col6"><strong>Total</strong></td>
+            <td class="col3">{{total}} €</td>
+        </tr>
+  </tbody>
+</table>
 {% endblock %}

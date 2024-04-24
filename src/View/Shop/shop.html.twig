@@ -4,7 +4,7 @@
     <section class="ariticle-shop">
             <div class="row">
                 {% for article in articles %}
-                    <form method="post"  class="col-sm-4 mb-3 mb-sm-0" action="#">
+                    <form method="post"  class="col-sm-4 mb-3 mb-sm-0" action="shop/add">
                         <div class="card text-center toto">
                             <div class="card-img-top">
                                 <img src="..\assets\images\guddies\{{article.nameCat}}\{{article.img_name}}.png" class="image_art"  name="{{article.nameCat}}" id="{{article.nameCat}}" alt="{{article.name}}" onclick="openImage({{article.id}})">

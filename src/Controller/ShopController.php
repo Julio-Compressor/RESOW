@@ -19,4 +19,10 @@ class ShopController extends AbstractController
             ['articles' => $articles, 'colors' => $colors, 'sizes' => $sizes]
         );
     }
+
+    public function addArticle()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        }
+    }
 }

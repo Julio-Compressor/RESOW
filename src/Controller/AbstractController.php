@@ -31,6 +31,5 @@ abstract class AbstractController
             false;
         $this->twig->addGlobal('user', $this->user);
         $this->twig->addGlobal('session', isset($_SESSION) ? $_SESSION : false);
-        var_dump(isset($_SESSION));
     }
 }
