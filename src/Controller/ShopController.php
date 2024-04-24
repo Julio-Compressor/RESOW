@@ -23,6 +23,12 @@ class ShopController extends AbstractController
     public function addArticle()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $articleData = $_POST;
+            $shopManager = new ShopManager();
+            $article = $shopManager->selectArticleById($articleData['id']);
+            $_SESSION['article'] = $article;
+            header('location: /discoBio');
         }
+        return $this->twig->render('Shop/shop.html.twig');
     }
 }

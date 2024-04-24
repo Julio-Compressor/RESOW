@@ -16,4 +16,14 @@ class ShopManager extends AbstractManager
 
         return $this->pdo->query($query)->fetchAll();
     }
+
+    public function selectArticleById(int $id)
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM " . self::TABLE . " WHERE id = :id ");
+        $statement->bindValue('id', $id, \PDO::PARAM_STR);
+
+        $statement->execute();
+
+        return $statement->fetch();
+    }
 }
