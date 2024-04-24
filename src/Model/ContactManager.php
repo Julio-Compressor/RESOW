@@ -20,7 +20,7 @@ class ContactManager extends AbstractManager
         } else {
             $professionnel = false;
         }
-        $statement = $this->pdo->prepare("INSERT INTO" . static::TABLE . " (name, firstname, email, particulier, 
+        $statement = $this->pdo->prepare("INSERT INTO " . static::TABLE .  " (name, firstname, email, particulier, 
         professionnel, message) VALUES (:name, :firstname, :email, :particulier, :professionnel, :message)");
         $statement->bindValue('name', $datacontact['name'], PDO::PARAM_STR);
         $statement->bindValue('firstname', $datacontact['firstname'], PDO::PARAM_STR);
