@@ -1,49 +1,25 @@
-{% extends 'layoutIndex.html.twig' %}
+{% extends 'layout.html.twig' %}
+
 {% block title %}RESOW | Home{% endblock %}
 
-{% block content %}
-<body class="body_background">
-    <video autoplay="autoplay" muted="" loop="" src="..\assets\videos\home_background.webm"></video>
-        <nav class="uk-navbar-container">
-            <div class="uk-container">
-                <div uk-navbar>
-                    <div class="navbar-right">
-                        <ul class="uk-navbar-nav">
-                               {% if user %}
-                               <li><a href="/" style="font-size: 1.1rem;">{{user.firstname}}</li>
-                        <li><a href="/" style="font-size: 1.1rem;">Compte</a></li>
-                        <li><a href="/logout" style="font-size: 1.1rem;"><img src="..\assets\images\deco.png" width="30px" height="30px"/></a></li>
+{% block stylesheet %}
+<link rel="stylesheet" href="/assets/css/index.css">
+{% endblock %}
 
-                        {% else %}
-                        <li><a href="/login" style="font-size: 1.1rem;">Login</a></li>
-                        <li><a href="/" style="font-size: 1.1rem;">register</a></li>
-                        {% endif %}
-                            <li><a href="#" style="font-size: 1.1rem;">panier</a></li>
-                        </ul>
-                    </div>
-                    <div class="uk-navbar-item-uk-logo">
-                        <img src="..\assets\images\logo_header.png">
-                    </div>
-                    <div class="uk-navbar-center">
-                        <ul class="uk-navbar-nav-link">
-                            <li><a href="/" class="home_nav">Home</a></li>
-                            <li><a href="discoBio" class="discobio_nav">DiscoBio</a></li>
-                            <li><a href="#" class="shop_nav">Shop</a></li>
-                            <li><a href="Contact" class="contact_nav">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
+{% block content %}
+<body>
+    <video autoplay="autoplay" muted="" loop="" src="..\assets\videos\home_background.webm"></video>
+    <main>
         <h1>ON TOUR !</h1>
-            <section>
-                <div class="events">
-                    {% for event in events %}
-                        <ul>
-                            <li class="scaling"><div class="soldout"><img class="tampon" src="{% if event['isSoldout'] == true %} ../assets/images/soldout.png {% endif %}" alt="" ></div><a href="#">{{ event.city ~ " - " ~ event.place ~ " - " ~ event.date }}</a></li>
-                        </ul>
-                    {% endfor %}
-                </div>
-            </section>    
+        <section class="liste">
+            <div class="events">
+                {% for event in events %}
+                    <ul>
+                        <li class="scaling"><div class="soldout"><img class="tampon" src="{% if event['isSoldout'] == true %} ../assets/images/soldout.png {% endif %}" alt="" ></div><a href="#">{{ event.city ~ " - " ~ event.place ~ " - " ~ event.date }}</a></li>
+                    </ul>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
 </body>
 {% endblock %}
