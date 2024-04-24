@@ -19,7 +19,9 @@ class ShopManager extends AbstractManager
 
     public function selectArticleById(int $id)
     {
-        $statement = $this->pdo->prepare("SELECT * FROM " . self::TABLE . " WHERE id = :id ");
+        $statement = $this->pdo->prepare("SELECT a.*, c.name AS nameCat FROM "
+            . static::TABLE . " AS a JOIN " . static::TABLE2 .
+            " AS c ON c.id=a.category_id WHERE a.id=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_STR);
 
         $statement->execute();
