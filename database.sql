@@ -65,7 +65,7 @@ CREATE TABLE `article` (
     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `name` VARCHAR(250) NOT NULL, `price` FLOAT NOT NULL, `description` TEXT NULL, category_id INT NOT NULL REFERENCES `category_article` (id), `img_name` VARCHAR(250) NOT NULL
 );
 
-DROP TABLE article;
+-- DROP TABLE article;
 
 TRUNCATE TABLE article;
 
@@ -74,7 +74,7 @@ INSERT INTO
         `name`, `price`, `description`, `category_id`, `img_name`
     )
 VALUES (
-        'T-Shirt Homme', '19.99', '', 1, 'tshirt_homme_noir'
+        'T-Shirt Homme', '19.99', '', 1, 'tshirt_homme-noir'
     ),
     (
         'Sweat Shirt', '39.99', '', 4, 'sweat_noir'
@@ -93,7 +93,7 @@ CREATE TABLE `category_article` (
     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `name` VARCHAR(250) NOT NULL
 );
 
-DROP TABLE `category_article`;
+-- DROP TABLE `category_article`;
 
 INSERT INTO
     `category_article` (`name`)
