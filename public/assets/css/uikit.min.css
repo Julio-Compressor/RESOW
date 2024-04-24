@@ -4075,10 +4075,13 @@ ul.uk-nav-sub {
 .uk-navbar {
   display: flex;
   /* position:relative */
+  height: 50vh;
 }
 
 .uk-navbar-container:not(.uk-navbar-transparent) {
   /* background: #f8f8f8 */
+  display: flex;
+  flex-direction: column;
   height: 50vh;
 }
 
@@ -4087,7 +4090,7 @@ ul.uk-nav-sub {
 [class*=uk-navbar-center] {
   display: flex;
   gap: 15px;
-  align-items: center
+  align-items: end;
 }
 
 .uk-navbar-right {
@@ -4134,7 +4137,8 @@ ul.uk-nav-sub {
   gap: 15px;
   margin: 0;
   padding: 0;
-  list-style: none font-family: var(--prim)
+  list-style: none;
+  font-family: var(--nav-font-2);
 }
 
 .uk-navbar-center:only-child,
@@ -4152,8 +4156,8 @@ ul.uk-nav-sub {
   column-gap: .25em;
   box-sizing: border-box;
   min-height: 80px;
-  font-size: .875rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 22px;
+  font-family: var(--nav-font);
   text-decoration: none
 }
 

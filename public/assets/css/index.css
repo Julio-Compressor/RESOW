@@ -36,20 +36,6 @@ h1 {
     margin-top: 2rem;
 }
 
-.uk-container {
-    height: 50vh;
-    padding: 0;
-
-}
-
-.uk-navbar {
-    display: flex;
-}
-
-/* .uk-navbar-container {
-    height: 50vh;
-} */
-
 main {
     display: flex;
     flex-direction: column;
