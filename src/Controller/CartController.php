@@ -28,6 +28,7 @@ class CartController extends AbstractController
         }
         // !!!!!!!! IMPORTANT !!!!! REMPLACER LA LIGNE CI DESSOUS POUR QUE LE PANNIER FONCTIONNE PAR : $carts[] = 0;
         $carts = [];
+        $carts[] = 0;
         foreach ($_SESSION['panier'] as $albumId => $quantite) {
             $albumManager = new CartManager();
             $data = $albumManager->selectOneByAlbumId($albumId);
