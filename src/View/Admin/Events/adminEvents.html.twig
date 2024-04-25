@@ -1,0 +1,11 @@
+{% block content %}
+<section>
+    <form action="">
+        <fieldset disabled>
+            <legend>Events</legend>
+            {% for event in events %}
+                <label for="disabledTextInput" class="form-label">{{ event.city }} {{% event.place %}} {{% event.date %}}</label>
+                <button type="submit" class="btn btn-primary">Supprimer</button>
+            {% endfor %}
+    </form>
+</section>
