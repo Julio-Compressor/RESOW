@@ -114,21 +114,21 @@ is_newsletter` BOOL NULL, `is_admin` BOOL NULL
 );
 
 -- contenu de la table user --
-INSERT INTO 
+INSERT INTO
     `user` (
         `firstname`, `lastname`, `password`, `email`, `is_admin`
     )
 VALUES (
-        'Admin', 'Niko', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@niko.fr', '1'
+        'Admin', 'Niko', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@niko.fr', 1
     ),
     (
-        'Admin', 'Julien', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@julien.fr' '1'
+        'Admin', 'Julien', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@julien.fr', 1
     ),
     (
-        'Admin', 'Matthieu', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@matthieu.fr' '1'
+        'Admin', 'Matthieu', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@matthieu.fr', 1
     ),
     (
-        'Admin', 'Anae', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@anae.fr' '1'
+        'Admin', 'Anae', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@anae.fr', 1
     );
 
 CREATE TABLE `item` (
