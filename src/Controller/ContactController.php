@@ -18,7 +18,7 @@ class ContactController extends AbstractController
             $contactManager = new ContactManager();
             $contactManager->insert($datacontact);
 
-            header('Location:/Contact/show');
+            header('Location: /Contact/show');
             return null;
         }
 

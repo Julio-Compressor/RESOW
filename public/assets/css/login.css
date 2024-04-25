@@ -1,8 +1,18 @@
-.card-body {
-    background-color: rgba(0, 0, 0, 0.61);
-    border-radius: 2rem;
-    width: 30rem;
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+
+.card-body{
+background-color: rgba(0, 0, 0, 0.61);
+border-radius: 2rem;
+width: 30rem;
+}
+
+/* html { overflow-y: hidden; }  */
 
 html {
     overflow-y: hidden;
@@ -31,6 +41,11 @@ html {
     justify-content: center;
 }
 
+.coming{
+    font-size: 2.5rem;
+    font-family: var(--nav-font) ;
+
 .vh-80.gradient-custom {
     height: 80vh;
+
 }
