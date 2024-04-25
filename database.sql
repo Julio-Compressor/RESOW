@@ -1,4 +1,3 @@
--- SQLBook: Code
 -- Active: 1713169810273@@127.0.0.1@3306@straszik
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
@@ -35,7 +34,7 @@ CREATE TABLE `album` (
     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `title` VARCHAR(250) NOT NULL, `type` VARCHAR(250) NOT NULL, `nb_track` INT NOT NULL, `price` FLOAT NOT NULL, `date` DATE NOT NULL, `description` TEXT NULL
 );
 
-TRUNCATE TABLE album;
+-- TRUNCATE TABLE album;
 
 INSERT INTO
     `album` (
@@ -67,7 +66,7 @@ CREATE TABLE `article` (
 
 -- DROP TABLE article;
 
-TRUNCATE TABLE article;
+-- TRUNCATE TABLE article;
 
 INSERT INTO
     `article` (
@@ -106,7 +105,7 @@ VALUES ('tshirt_homme'),
     ('other');
 
 -- table user --
-DROP TABLE `user`;
+-- DROP TABLE `user`;
 
 CREATE TABLE `user` (
     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `firstname` VARCHAR(50) NOT NULL, `lastname` VARCHAR(50) NOT NULL, `password` VARCHAR(255) NOT NULL, `email` VARCHAR(100) NOT NULL, `address` VARCHAR(255) NULL, `address2` VARCHAR(255) NULL, `zip_code` INT NULL, `pays` VARCHAR(60) NULL, `phone` INT NULL, `
@@ -167,7 +166,7 @@ MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 3;
 -- Structure de la table `onTour`
 --
 CREATE TABLE `events` (
-    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `city` VARCHAR(100) NOT NULL, `place` VARCHAR(100) NOT NULL, `date` VARCHAR(10) NOT NULL, `isSoldout` BOOL NOT NULL
+    `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL, `city` VARCHAR(100) NOT NULL, `place` VARCHAR(100) NOT NULL, `date` VARCHAR(100) NOT NULL, `isSoldout` BOOL NOT NULL
 );
 
 -- TRUNCATE TABLE `events`;
