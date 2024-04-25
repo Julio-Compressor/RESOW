@@ -1,11 +1,47 @@
+{% extends 'layoutAdmin.html.twig' %}
+
 {% block content %}
-<section>
-    <form action="">
-        <fieldset disabled>
-            <legend>Events</legend>
-            {% for event in events %}
-                <label for="disabledTextInput" class="form-label">{{ event.city }} {{% event.place %}} {{% event.date %}}</label>
-                <button type="submit" class="btn btn-primary">Supprimer</button>
-            {% endfor %}
+<main>
+<div class="modify-event">
+<h1>Modifier un évenement</h1>
+    <table class="table table-dark table-striped">
+    <tbody>
+        {% for event in events %}
+        <tr>
+            <td>{{ event.city }} | {{ event.place }} | {{ event.date }} | Soldout:{{ event.isSoldout }}</td>
+            <td><a href="/admin/events/delete?id={{event.id}}">Delete</a></td>
+        <td>        
+        <form action="events/update?id={{event.id}}" method="post">
+            <input class="form-check-input" type="checkbox" name="isSoldout" value=true id="isSoldout">
+            <label class="form-check-label" for="isSoldout">is Soldout</label>
+            <input type="hidden" name="id" value="{{event.id}}">
+            <button type="submit" class="btn btn-primary">update</button>
+        </form>
+        </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+</div>
+<div class="add-event">
+<h1>Ajouter un évenement</h1>
+    <form method="post" action="">
+    <div class="mb-3">
+        <label for="city" class="form-label">Ville</label>
+        <input type="text" name="city" class="form-control" id="city" aria-describedby="ville">
+    </div>
+    <div class="mb-3">
+        <label for="place" class="form-label">Nom de la Salle</label>
+        <input type="text" name="place" class="form-control" id="place" >
+    </div>
+    <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input type="text" name="date" class="form-control" id="date" >
+    </div>
+    <input class="form-check-input" type="checkbox" name="isSoldout" value=true id="isSoldout">
+    <label class="form-check-label" for="isSoldout">is Soldout</label><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-</section>
+</div>
+</main>
+{% endblock %}

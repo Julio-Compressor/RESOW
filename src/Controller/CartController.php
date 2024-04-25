@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\CartManager;
+use App\Model\ShopManager;
 use App\Controller\AbstractController;
 
 class CartController extends AbstractController
@@ -23,6 +24,7 @@ class CartController extends AbstractController
 
     public function index(): string
     {
+        // $_SESSION['article'] = [];
         if (!isset($_SESSION['panier'])) {
             $_SESSION['panier'] = [];
         }
@@ -35,23 +37,37 @@ class CartController extends AbstractController
             $data['qty'] = $quantite;
             $carts[] = $data;
         }
+        $articles = [];
+        $articles = $_SESSION['article'];
 
-        return $this->twig->render('Cart/cart.html.twig', ['carts' => $carts]);
+        return $this->twig->render('Cart/cart.html.twig', ['carts' => $carts, 'articles' => $articles]);
     }
 
     public function delete()
     {
-        $id = $_GET['id'];
-        //$_SESSION['panier'] = [];
-        $cartTemp = []; // Je crée un tableau temporaire
-        // je boucle sur ma session panier
-        foreach ($_SESSION['panier'] as $albumId => $quantite) {
-            if ($id != $albumId) { // Si l'élément a supprimer n'est pas la ligne dans la panier
-                $cartTemp[$albumId] = $_SESSION['panier'][$albumId]; // Alors je le rajoute dans mon tableau temporaire
-                $quantite = trim($quantite); //ligne inutile mais pour passer grump
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $cartTemp = []; // Je crée un tableau temporaire
+            foreach ($_SESSION['panier'] as $albumId => $quantite) {
+                if ($id != $albumId) { // Si l'élément a supprimer n'est pas la ligne dans la panier
+                    // Alors je le rajoute dans mon tableau temporaire
+                    $cartTemp[$albumId] = $_SESSION['panier'][$albumId];
+                    $quantite = trim($quantite); //ligne inutile mais pour passer grump
+                }
             }
+            $_SESSION['panier'] = $cartTemp;
         }
-        $_SESSION['panier'] = $cartTemp;
+
+        if (isset($_GET['id2'])) {
+            $id2 = $_GET['id2'];
+            $cartTemp2 = [];
+            foreach ($_SESSION['article'] as $articleId => $quantite2) {
+                if ($id2 != $articleId) {
+                    $cartTemp2[$articleId] = $_SESSION['article'][$articleId];
+                }
+            }
+            $_SESSION['article'] = $cartTemp2;
+        }
         header('location: /cart');
     }
 }

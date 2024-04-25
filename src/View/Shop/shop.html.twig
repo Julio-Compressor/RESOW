@@ -2,63 +2,70 @@
 
 {% block title %}RESOW | Shop{% endblock %}
 
-{% block stylesheet %}<link rel="stylesheet" href="/assets/css/shop.css">{% endblock %}
+{% block stylesheet %}
+<link rel="stylesheet" href="/assets/css/discoBio.css">
+<link rel="stylesheet" href="/assets/css/shop.css">
+{% endblock %}
 
 {% block content %}
-    <section class="ariticle-shop">
-            <div class="row">
-                {% for article in articles %}
-                    <form method="post"  class="col-sm-4 mb-3 mb-sm-0" action="shop/add">
-                        <div class="card text-center toto">
-                            <div class="card-img-top">
-                                <img src="..\assets\images\guddies\{{article.nameCat}}\{{article.img_name}}.png" class="image_art"  name="{{article.nameCat}}" id="{{article.nameCat}}" alt="{{article.name}}" onclick="openImage({{article.id}})">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">{{article.name}}</h5>
-                                {% if article.category_id <= 6 %}
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        {% for color in colors %}
-                                        <input type="radio" class="btn-check color" name="color" id="{{color}}" value="{{color}}" autocomplete="off" checked>
-                                        <label class="btn btn-secondary" for="{{color}}">{{color}}</label>
-                                        {% endfor %}
-                                    </li>
-                                    {% if article.category_id < 5 %}
-                                    <li class="list-group-item">
-                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group" id="{{article.id}}">
-                                        {% for size in sizes %}
-                                                <input type="radio" class="btn-check" name="size" id="{{article.id}}-{{size}}" value="{{size}}" autocomplete="off" checked>
-                                                <label class="btn btn-outline-primary" for="{{article.id}}-{{size}}">{{size}}</label>
-                                        {% endfor %}
-                                            </div>
-                                    </li>
-                                    {% endif %}
-                                </ul>
-                                {% endif %}
-                                <p class="card-text">{{article.price}} €</p>
-                                <input type="hidden" name="id" value="{{article.id}}">
-                                <button class="btn btn-primary" type="submit">Panier</button>
-                            </div>
-                        </div>
-                    </form>
-                {% endfor %}
-            </div>
-    </section>
+	<section class="article-shop">
+		<div class="row">
+			{% for article in articles %}
+				<form method="post" class="col-sm-4 mb-3 mb-sm-0" action="shop/add" data-article-id="{{article.nameCat}}">
+					<div class="card text-center toto">
+						<div class="card-img-top">
+							<img src="..\assets\images\guddies\{{article.nameCat}}\{{article.img_name}}.png" class="{{article.id}}" name="{{article.nameCat}}" id="{{article.id}}" alt="{{article.name}}" onclick="openImage({{article.id}})">
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">{{article.name}}</h5>
+							{% if article.category_id <= 6 %}
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item">
+										{% for color in colors %}
+											<input type="radio" class="btn-check color" name="color" id="{{ color }}-{{ article.id }}" value="{{ color }}" autocomplete="off" checked>
+											<label class="btn btn-secondary" for="{{ color }}-{{ article.id }}">{{ color }}</label>
+										{% endfor %}
+									</li>
+									{% if article.category_id < 5 %}
+										<li class="list-group-item">
+											<div class="btn-group" role="group" aria-label="Basic radio toggle button group" id="{{article.id}}">
+												{% for size in sizes %}
+													<input type="radio" class="btn-check" name="size" id="{{article.id}}-{{size}}" value="{{size}}" autocomplete="off" checked>
+													<label class="btn btn-outline-primary" for="{{article.id}}-{{size}}">{{size}}</label>
+												{% endfor %}
+											</div>
+										</li>
+									{% endif %}
+								</ul>
+							{% endif %}
+							<p class="card-text">{{article.price}}
+								€</p>
+							<input type="hidden" name="id" value="{{article.id}}">
+							<button class="btn btn-primary" type="submit">Panier</button>
+						</div>
+					</div>
+				</form>
+			{% endfor %}
+		</div>
+	</section>
 {% endblock %}
 {% block javascript %}
-<script>
-const images = document.querySelectorAll('.image_art');
-const inputs= document.querySelectorAll('.color');
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+const forms = document.querySelectorAll('form');
+forms.forEach(form => {
+const inputs = form.querySelectorAll('.color');
 
-// console.log(images[0]);
-    inputs.forEach(input => {
-        input.addEventListener('click', (e) => {
-            images.forEach(image => {
-                const category=image.name
-                image.src="../assets/images/guddies/"+ category+ "/"+ category +"-"+ e.target.value +".png"
-                
-            })
-        });
-    });
-</script>
+inputs.forEach(input => {
+input.addEventListener('click', function () {
+const color = this.value;
+const image = form.querySelector('.card-img-top img');
+const category = image.getAttribute('name');
+image.src = `../assets/images/guddies/${category}/${category}-${color}.png`;
+});
+});
+});
+});
+
+	</script>
 {% endblock %}
