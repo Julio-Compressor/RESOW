@@ -31,11 +31,11 @@ class UserManager extends AbstractManager
         $statement->bindValue(':firstname', $userdata['firstname'], PDO::PARAM_STR);
         $statement->bindValue(':lastname', $userdata['lastname'], PDO::PARAM_STR);
         $statement->execute();
-        
+
         return (int)$this->pdo->lastInsertId();
     }
 
-    
+
     public function update(array $userdata)
     {
 
@@ -44,10 +44,7 @@ class UserManager extends AbstractManager
         $statement->bindValue(':email', $userdata['email'], PDO::PARAM_STR);
         $statement->bindValue(':password', password_hash($userdata['password'], PASSWORD_DEFAULT));
         $statement->execute();
-        
+
         return (int)$this->pdo->lastInsertId();
     }
-
 }
-
-
