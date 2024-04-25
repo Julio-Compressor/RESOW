@@ -8,30 +8,75 @@ class UserController extends AbstractController
 {
     public function login()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $credentials = array_map('trim', $_POST);
+        $errors =[];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') 
+        {
+            $userdata = array_map('trim', $_POST);
+
+
+            if (!empty($userdata['email'])) 
+            {
+                $errors[] = 'L\'adresse email ou le mot de passe n\'est pas valide';
+            }
+
+            // if (filter_var($credentials['email'], FILTER_VALIDATE_EMAIL) === false) {
+            //     $errors[] = 'email obligatoire';
+            // }
+
+            // if (empty($credentials['password'])) {
+            //     $errors[] = 'Le mot de passe est obligatoire';
+            // }
+
             $userManager = new UserManager();
-            $user = $userManager->selectOneByEmail($credentials['email']);
-            if ($user && password_verify($credentials['password'], $user['password'])) {
+            $user = $userManager->selectOneByEmail($userdata['email']);
+                if ($user && password_verify($userdata['password'], $user['password'])) {
                 $_SESSION['user_id'] = $user['id'];
-                header('location: /discoBio');
+                $_SESSION['is_admin'] = $user['is_admin'];
+                header('Location: /');
                 exit();
             }
         }
-        return $this->twig->render('User/login.html.twig');
+        return $this->twig->render('User/login.html.twig', ['errors'=>$errors]);
     }
 
     public function register()
+
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $credentials = $_POST;
-            $userManager = new UserManager();
-            if ($userManager->insert($credentials)) {
+        $errors = [];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') 
+        {
+            $userdata = array_map('trim', $_POST);
+
+            if (filter_var($userdata['email'], FILTER_VALIDATE_EMAIL) === false) 
+            {
+                $errors[] = 'veuillez entrez un email';
+            }        
+            
+            if (empty($userdata['firstname'])) 
+            {
+                $errors[] = 'veuillez entrez un prénom';
+            }
+
+            if (empty($userdata['lastname'])) 
+            {
+                $errors[] = 'veuillez entrez un Nom';
+            }
+
+            if (empty($userdata['password'])) 
+            {
+                $errors[] = 'veuillez entrez un mot de passe';
+            }
+
+           
+            if (empty($errors)) { 
+                $userManager = new UserManager();
+                $userManager->insert($userdata);
                 return $this->login();
             }
         }
-        return $this->twig->render('User/register.html.twig');
+        return $this->twig->render('User/register.html.twig', ['errors'=>$errors]);
     }
+
 
     public function logout()
     {
@@ -39,4 +84,32 @@ class UserController extends AbstractController
         header('location: /');
         exit();
     }
+    
+    public function resetpassword()
+
+    {
+        $errors = [];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') 
+        {
+            $userdata = array_map('trim', $_POST);
+
+            if (filter_var($userdata['email'], FILTER_VALIDATE_EMAIL) === false) 
+            {
+                $errors[] = 'veuillez entrez un email';
+            }        
+
+            if (empty($userdata['password'])) 
+            {
+                $errors[] = 'veuillez entrez un mot de passe';
+            }
+
+            if (empty($errors)) { 
+                $userManager = new UserManager();
+                $userManager->update($userdata);
+                header('location: /compte');
+            }
+        }
+        return $this->twig->render('User/compte.html.twig', ['errors'=>$errors]);
+    }
 }
+

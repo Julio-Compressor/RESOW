@@ -1,3 +1,10 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
 .card-body {
     width: 200px;
     display: flex;
