@@ -1,33 +1,23 @@
 {% extends 'layoutAdmin.html.twig' %}
 
+{% block title %}RESOW | Administration{% endblock %}
+
 {% block content %}
-
-
-<nav class="navbar bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="admin/events">Manage Events</a>
-  </div>
-</nav>
-<nav class="navbar bg-body-tertiary">
+<main>
+  <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-    <a class="navbar-brand" href="admin/discoBio">Manage discoBio</a>
-  </div>
-</nav>
-<nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-    <a class="navbar-brand" href="#">Manage Shop</a>
-  </div>
-</nav>
-{# <section class="events">
-    <a href="admin/adminEvents">Manage Events</a>
-</section>
-<section class="discoBio">
-    <a href="">Manage Albums</a>
-</section>
-<section class="shop">
-    <a href="">Manage Articles</a>
-</section>
-<section class="user">
-    <a href="">Manage Users</a>
-</section> #}
+      <a class="navbar-brand" href="admin/events">Manage Events</a>
+    </div>
+  </nav>
+  <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+      <a class="navbar-brand" href="admin/discoBio">Manage discoBio</a>
+    </div>
+  </nav>
+  <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+      <a class="navbar-brand" href="#">Manage Shop</a>
+    </div>
+  </nav>
+</main>
 {% endblock %}

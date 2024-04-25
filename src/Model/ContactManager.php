@@ -14,7 +14,6 @@ class ContactManager extends AbstractManager
         } else {
             $particulier = false;
         }
-
         if (isset($datacontact['professionnel']) && $datacontact['professionnel'] === 'on') {
             $professionnel = true;
         } else {
@@ -28,14 +27,15 @@ class ContactManager extends AbstractManager
         $statement->bindValue('particulier', $particulier, PDO::PARAM_INT);
         $statement->bindValue('professionnel', $professionnel, PDO::PARAM_INT);
         $statement->bindValue('message', $datacontact['message'], PDO::PARAM_STR);
-
         $statement->execute();
+
         return (int)$this->pdo->lastInsertId();
     }
 
     public function lastContactMessage()
     {
         $query = "SELECT * FROM " . static::TABLE . " ORDER BY id DESC LIMIT 1 ";
+
         return $this->pdo->query($query)->fetch();
     }
 }

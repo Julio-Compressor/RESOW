@@ -23,7 +23,6 @@ class ShopManager extends AbstractManager
             . static::TABLE . " AS a JOIN " . static::TABLE2 .
             " AS c ON c.id=a.category_id WHERE a.id=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_STR);
-
         $statement->execute();
 
         return $statement->fetch();

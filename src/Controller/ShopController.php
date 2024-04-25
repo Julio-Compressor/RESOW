@@ -11,7 +11,6 @@ class ShopController extends AbstractController
     {
         $articleTable = new ShopManager();
         $articles = $articleTable->selectArticleCategory();
-
         $colors = ['noir', 'bleu', 'jaune', 'rose', 'vert'];
         $sizes = ['S', 'M', 'L'];
         return $this->twig->render(
