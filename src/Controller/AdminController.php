@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Model\IndexManager;
+use App\Model\AdminManager;
 use App\Controller\AbstractController;
 
 class AdminController extends AbstractController
