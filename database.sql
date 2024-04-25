@@ -76,10 +76,10 @@ VALUES (
         'T-Shirt Homme', '19.99', '', 1, 'tshirt_homme-noir'
     ),
     (
-        'Sweat Shirt', '39.99', '', 4, 'sweat_noir'
+        'Sweat Shirt', '39.99', '', 4, 'sweat-noir'
     ),
     (
-        'Casquette', '24.99', '', 5, 'casquette_noir'
+        'Casquette', '24.99', '', 5, 'casquette-noir'
     ),
     (
         'Grinder Multi', '15', '', 7, 'grinder'
