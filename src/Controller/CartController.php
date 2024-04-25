@@ -12,6 +12,9 @@ class CartController extends AbstractController
     {
         $id = $_GET['album'];
         // Il sait qu'il existe une clé qui est lié à l'album
+        if (!isset($_SESSION['panier'])) {
+            $_SESSION['panier'] = [];
+        }
         if (array_key_exists($id, $_SESSION['panier'])) {
             $_SESSION['panier'][$id] += 1;
         } else {
