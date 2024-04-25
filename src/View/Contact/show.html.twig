@@ -1,32 +1,21 @@
 {% extends 'layout.html.twig' %}
 {% block stylesheet %}<link rel="stylesheet" href="/assets/css/contact.css">{% endblock %}
 {% block title %}RESOW | Contact{% endblock %}
+{% block stylesheet %}<link rel="stylesheet" href="/assets/css/show.css">{% endblock %}
 {% block content %}
 <main class='ContactInfo'>
-<h2 class='ContactShow'>Contact</h2>
-<p class= 'MessageRecap'>Nous avons pris en compte votre requête et vous serez recontacté dans les plus brefs délais</p>
-<div class='ContactUserInfo'>
-<h3 class='InfoRecap'>Vos Informations</h3>
-<p class= 'RecapNom'>{{contact.name}} {{contact.firstname}}</p>
-<p class='RecapMail'>{{contact.email}}</p>
-<p class='RecapStatut'>{{contact.particulier}} {{contact.professionnel}}</p>
-<p class='RecapMessage'>{{contact.message}}</p>
-</div>
-</main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <h2 class="ContactShow">Contact</h2>
+    <p class="MessageRecap">Nous avons pris en compte votre requête et vous serez recontacté dans les plus brefs délais</p>
+    <div class='ContactUserInfo'>
+        <h3 class='InfoRecap'>Vos Informations</h3>
+        <p class= 'RecapNom'>{{contact.name}} {{contact.firstname | raw}}</p>
+        <p class='RecapMail'>{{contact.email}}</p>
+        {% if contact.professionnel == 1 %}
+        <p class='RecapStatut'>professionel</p>
+        {% else %}
+            <p class='RecapStatut'>particulier</p>
+        {% endif %}
+        <p class='RecapMessage'>{{contact.message}}</p>
+    </div>
 </main>
 {% endblock %}

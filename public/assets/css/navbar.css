@@ -107,7 +107,6 @@ button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle{
 .deconnexion-button{
     height: 30px;
     width: 30px;
-   
 }
 
 .staff-logo{
@@ -117,4 +116,7 @@ button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle{
     margin-top: 1.2rem;
     position: absolute;
 
+}
+.uk-navbar-right li a {
+    font-size: 1.1rem;
 }
