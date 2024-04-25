@@ -1,0 +1,26 @@
+.ContactInfo {
+background-color: #0000009e;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-left: 30rem;
+margin-right: 30rem;
+border-radius: 20px;
+margin-top: 150px;
+}
+
+.ContactUserInfo {
+    height :auto
+}
+
+.RecapNom,.RecapMail,.RecapStatut,.RecapMessage {
+    background-color: black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.ContactShow,.InfoRecap {
+    color: var(--jaune);
+}

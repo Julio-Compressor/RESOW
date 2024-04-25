@@ -1,0 +1,57 @@
+table.table.table-dark.table-striped {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 4rem;
+}
+.album_img img.card-img-top {
+    width: auto;
+    height: 100%;
+}
+td.col0 {
+    vertical-align: middle;
+    padding: 1rem;
+    
+}
+td.col1 {
+    max-width: 90px;
+}
+td.col2 {
+    vertical-align: middle;
+}
+td.col3 {
+    vertical-align: middle;
+    
+}
+td.col4 {
+    vertical-align: middle;
+    text-align: center;
+
+}
+td.col5 {
+    vertical-align: middle;
+    text-align: center;
+
+}
+td.col6 {
+    vertical-align: middle;
+    text-align: right;
+}
+table {
+    font-family: var(--primary-font);
+}
+table h3 {
+    font-size: 23px;
+    color: var(--bleu);
+    margin-bottom: 0rem;
+}
+td.toto {
+    background-color: transparent;
+    border-bottom: none;
+}
+
+td a.btn.btn-primary {
+    width: 80px;
+    text-align: center;
+    box-shadow: inset 0px 0px 3px 0px black;
+    background-color: #c04242;
+}

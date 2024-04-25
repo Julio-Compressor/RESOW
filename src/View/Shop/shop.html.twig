@@ -1,13 +1,17 @@
 {% extends 'layout.html.twig' %}
+
 {% block title %}RESOW | Shop{% endblock %}
+
+{% block stylesheet %}<link rel="stylesheet" href="/assets/css/shop.css">{% endblock %}
+
 {% block content %}
     <section class="ariticle-shop">
             <div class="row">
                 {% for article in articles %}
-                    <form method="post"  class="col-sm-4 mb-3 mb-sm-0" action="#">
-                        <div class="card text-center">
+                    <form method="post"  class="col-sm-4 mb-3 mb-sm-0" action="shop/add">
+                        <div class="card text-center toto">
                             <div class="card-img-top">
-                                <img src="..\assets\images\guddies\{{article.nameCat}}\{{article.img_name}}.png"  name="{{article.nameCat}}" id="{{article.nameCat}}" alt="{{article.name}}" onclick="openImage({{article.id}})">
+                                <img src="..\assets\images\guddies\{{article.nameCat}}\{{article.img_name}}.png" class="image_art"  name="{{article.nameCat}}" id="{{article.nameCat}}" alt="{{article.name}}" onclick="openImage({{article.id}})">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{article.name}}</h5>
@@ -15,7 +19,7 @@
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
                                         {% for color in colors %}
-                                        <input type="radio" class="btn-check" name="color" id="{{color}}" value="{{color}}" autocomplete="off" checked>
+                                        <input type="radio" class="btn-check color" name="color" id="{{color}}" value="{{color}}" autocomplete="off" checked>
                                         <label class="btn btn-secondary" for="{{color}}">{{color}}</label>
                                         {% endfor %}
                                     </li>
@@ -41,5 +45,20 @@
             </div>
     </section>
 {% endblock %}
-{# {% block javascript %}
-{% endblock %} #}
+{% block javascript %}
+<script>
+const images = document.querySelectorAll('.image_art');
+const inputs= document.querySelectorAll('.color');
+
+// console.log(images[0]);
+    inputs.forEach(input => {
+        input.addEventListener('click', (e) => {
+            images.forEach(image => {
+                const category=image.name
+                image.src="../assets/images/guddies/"+ category+ "/"+ category +"-"+ e.target.value +".png"
+                
+            })
+        });
+    });
+</script>
+{% endblock %}

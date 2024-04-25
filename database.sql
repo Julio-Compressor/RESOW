@@ -1,4 +1,4 @@
--- Active: 1713169372026@@127.0.0.1@3306@straszik
+-- Active: 1713452145964@@127.0.0.1@3306@straszik
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
@@ -61,12 +61,11 @@ CREATE TABLE `form` (
     `id` INT PRIMARY KEY AUTO_INCREMENT, `name` VARCHAR (100) NOT NULL, `firstname` VARCHAR (100) NOT NULL, `email` VARCHAR(100), `particulier` BOOLEAN NULL, `professionnel` BOOLEAN NULL, `message` TEXT NOT NULL 
 );
 
-
 CREATE TABLE `article` (
     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `name` VARCHAR(250) NOT NULL, `price` FLOAT NOT NULL, `description` TEXT NULL, category_id INT NOT NULL REFERENCES `category_article` (id), `img_name` VARCHAR(250) NOT NULL
 );
 
-DROP TABLE article;
+-- DROP TABLE article;
 
 TRUNCATE TABLE article;
 
@@ -75,7 +74,7 @@ INSERT INTO
         `name`, `price`, `description`, `category_id`, `img_name`
     )
 VALUES (
-        'T-Shirt Homme', '19.99', '', 1, 'tshirt_homme_noir'
+        'T-Shirt Homme', '19.99', '', 1, 'tshirt_homme-noir'
     ),
     (
         'Sweat Shirt', '39.99', '', 4, 'sweat_noir'
@@ -94,7 +93,7 @@ CREATE TABLE `category_article` (
     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `name` VARCHAR(250) NOT NULL
 );
 
-DROP TABLE `category_article`;
+-- DROP TABLE `category_article`;
 
 INSERT INTO
     `category_article` (`name`)
@@ -107,20 +106,30 @@ VALUES ('tshirt_homme'),
     ('other');
 
 -- table user --
+DROP TABLE `user`;
 
 CREATE TABLE `user` (
-     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `firstname` VARCHAR(50) NOT NULL, `lastname` VARCHAR(50) NOT NULL, `password` VARCHAR(255) NOT NULL, `email` VARCHAR(100) NOT NULL, `address` VARCHAR(255) NOT NULL, `address2` VARCHAR(255) NOT NULL, `zip_code` INT NOT NULL, `pays` VARCHAR(60) NOT NULL,`phone` INT NOT NULL,`
+    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `firstname` VARCHAR(50) NOT NULL, `lastname` VARCHAR(50) NOT NULL, `password` VARCHAR(255) NOT NULL, `email` VARCHAR(100) NOT NULL, `address` VARCHAR(255) NULL, `address2` VARCHAR(255) NULL, `zip_code` INT NULL, `pays` VARCHAR(60) NULL, `phone` INT NULL, `
 is_newsletter` BOOL NULL, `is_admin` BOOL NULL
 );
 
--- contenu de la table user -- 
+-- contenu de la table user --
 INSERT INTO
-`user` (`firstname`, `lastname`, `password`, `email`)
-VALUES ('Admin', 'Niko', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@niko.fr'), 
-('Admin', 'Julien', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@julien.fr'),
-('Admin', 'Matthieu', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@matthieu.fr'),
-('Admin', 'Anae', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@anae.fr');
-
+    `user` (
+        `firstname`, `lastname`, `password`, `email`
+    )
+VALUES (
+        'Admin', 'Niko', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@niko.fr'
+    ),
+    (
+        'Admin', 'Julien', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@julien.fr'
+    ),
+    (
+        'Admin', 'Matthieu', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@matthieu.fr'
+    ),
+    (
+        'Admin', 'Anae', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@anae.fr'
+    );
 
 
 CREATE TABLE `item` (

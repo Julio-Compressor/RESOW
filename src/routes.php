@@ -10,6 +10,7 @@ return [
     '' => ['IndexController', 'index',],
     'discoBio' => ['DiscoBioController', 'index'],
     'shop' => ['ShopController', 'index'],
+    'shop/add' => ['shopController', 'addArticle'],
     'items' => ['ItemController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
@@ -20,4 +21,7 @@ return [
     'register' => ['UserController', 'register',],
     'login' => ['UserController', 'login',],
     'logout' => ['UserController', 'logout',],
+    'album' => ['CartController', 'insertAlbumById', ['id']],
+    'cart' => ['CartController', 'index', ['id']],
+    'cart/delete' => ['CartController', 'delete', ['id']],
 ];
