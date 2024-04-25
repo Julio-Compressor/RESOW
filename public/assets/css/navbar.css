@@ -108,6 +108,15 @@ button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle{
     height: 30px;
     width: 30px;
 }
+
+.staff-logo{
+ height: 25px;
+    width: 45px;
+    margin-left: -2.7rem;
+    margin-top: 1.2rem;
+    position: absolute;
+
+}
 .uk-navbar-right li a {
     font-size: 1.1rem;
 }

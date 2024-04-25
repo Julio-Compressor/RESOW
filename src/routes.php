@@ -24,9 +24,9 @@ return [
     'album' => ['CartController', 'insertAlbumById', ['id']],
     'cart' => ['CartController', 'index', ['id']],
     'cart/delete' => ['CartController', 'delete', ['id']],
+    'compte' => ['UserController', 'resetpassword',],
     'admin' => ['AdminController', 'index'],
     'admin/events' => ['AdminEventsController', 'index'],
     'admin/events/update' => ['AdminEventsController', 'update', ['id']],
     'admin/events/delete' => ['AdminEventsController', 'delete', ['id']],
-
 ];
