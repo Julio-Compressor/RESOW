@@ -1,26 +1,31 @@
 .ContactInfo {
-background-color: #0000009e;
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-left: 30rem;
-margin-right: 30rem;
-border-radius: 20px;
-margin-top: 150px;
+    background-color: #0000009e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    margin: auto;
+    width: 60%;
 }
 
-.ContactUserInfo {
-    height :auto
+
+.ContactUserInfo .RecapMessage {
+    max-width: 65ch;
+    background-color: black;
+    border-radius: 20px;
+    word-wrap: break-word;
 }
 
-.RecapNom,.RecapMail,.RecapStatut,.RecapMessage {
+.RecapNom,
+.RecapMail,
+.RecapStatut {
     background-color: black;
     border-radius: 20px;
     display: flex;
     justify-content: center;
-
 }
 
-.ContactShow,.InfoRecap {
+.ContactShow,
+.InfoRecap {
     color: var(--jaune);
 }
