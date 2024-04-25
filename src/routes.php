@@ -29,4 +29,5 @@ return [
     'admin/events' => ['AdminEventsController', 'index'],
     'admin/events/update' => ['AdminEventsController', 'update', ['id']],
     'admin/events/delete' => ['AdminEventsController', 'delete', ['id']],
+    'error' => ['ErrorController', 'index',],
 ];

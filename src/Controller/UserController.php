@@ -17,14 +17,6 @@ class UserController extends AbstractController
                 $errors[] = 'L\'adresse email ou le mot de passe n\'est pas valide';
             }
 
-            // if (filter_var($credentials['email'], FILTER_VALIDATE_EMAIL) === false) {
-            //     $errors[] = 'email obligatoire';
-            // }
-
-            // if (empty($credentials['password'])) {
-            //     $errors[] = 'Le mot de passe est obligatoire';
-            // }
-
             $userManager = new UserManager();
             $user = $userManager->selectOneByEmail($userdata['email']);
             if ($user && password_verify($userdata['password'], $user['password'])) {
@@ -79,6 +71,10 @@ class UserController extends AbstractController
 
     public function resetpassword()
     {
+        if ((!$this->user )) {
+            echo 'Accès non autorisé';
+            header('Location: /error');
+        }
         $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $userdata = array_map('trim', $_POST);
