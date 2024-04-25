@@ -40,6 +40,9 @@ class CartController extends AbstractController
             $data['qty'] = $quantite;
             $carts[] = $data;
         }
+        if (!isset($_SESSION['article'])) {
+            $_SESSION['article'] = [];
+        }
         $articles = [];
         $articles = $_SESSION['article'];
 

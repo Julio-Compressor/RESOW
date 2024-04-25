@@ -29,4 +29,14 @@ return [
     'admin/events' => ['AdminEventsController', 'index'],
     'admin/events/update' => ['AdminEventsController', 'update', ['id']],
     'admin/events/delete' => ['AdminEventsController', 'delete', ['id']],
+    'admin/events/add' => ['AdminEventsController', 'add'],
+    'admin/discoBio' => ['AdminDiscoBioController', 'index'],
+    'admin/discoBio/edit' => ['AdminDiscoBioController', 'edit', ['id']],
+    'admin/discoBio/update' => ['AdminDiscoBioController', 'update', ['id']],
+
+
+
+
+
+
 ];

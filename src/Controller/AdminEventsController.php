@@ -42,4 +42,19 @@ class AdminEventsController extends AbstractController
             header('location: /admin/events');
         }
     }
+    public function add()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // clean $_POST data
+            $newEvent = array_map('trim', $_POST);
+            $newEvent['city'] = mb_strtoupper($newEvent['city']);
+            if (!isset($newEvent['isSoldout'])) {
+                $newEvent['isSoldout'] = false;
+            }
+            $eventsManager = new IndexManager();
+            $eventsManager->addEvent($newEvent);
+            header('location: /admin/events');
+            return null;
+        }
+    }
 }
