@@ -1,4 +1,5 @@
--- Active: 1713452145964@@127.0.0.1@3306@straszik
+-- SQLBook: Code
+-- Active: 1713169810273@@127.0.0.1@3306@straszik
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
@@ -56,9 +57,8 @@ VALUES (
         'Two Years Overdue', 'Demat\'', '5', '19.99', '2023-04-03', 'Format WAV & FLAC'
     );
 
-
 CREATE TABLE `form` (
-    `id` INT PRIMARY KEY AUTO_INCREMENT, `name` VARCHAR (100) NOT NULL, `firstname` VARCHAR (100) NOT NULL, `email` VARCHAR(100), `particulier` BOOLEAN NULL, `professionnel` BOOLEAN NULL, `message` TEXT NOT NULL 
+    `id` INT PRIMARY KEY AUTO_INCREMENT, `name` VARCHAR(100) NOT NULL, `firstname` VARCHAR(100) NOT NULL, `email` VARCHAR(100), `particulier` BOOLEAN NULL, `professionnel` BOOLEAN NULL, `message` TEXT NOT NULL
 );
 
 CREATE TABLE `article` (
@@ -131,7 +131,6 @@ VALUES (
         'Admin', 'Anae', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@anae.fr'
     );
 
-
 CREATE TABLE `item` (
     `id` int(11) UNSIGNED NOT NULL, `title` varchar(255) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
@@ -168,10 +167,10 @@ MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 3;
 -- Structure de la table `onTour`
 --
 CREATE TABLE `events` (
-    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `city` VARCHAR(100) NOT NULL, `place` VARCHAR(100) NOT NULL, `date` DATE NOT NULL, `isSoldout` BOOL NOT NULL
+    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `city` VARCHAR(100) NOT NULL, `place` VARCHAR(100) NOT NULL, `date` VARCHAR(10) NOT NULL, `isSoldout` BOOL NOT NULL
 );
 
-TRUNCATE TABLE `events`;
+-- TRUNCATE TABLE `events`;
 
 INSERT INTO
     `events` (

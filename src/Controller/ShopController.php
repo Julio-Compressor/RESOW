@@ -29,7 +29,7 @@ class ShopController extends AbstractController
                 $_SESSION['article'][$id] = 0;
             }
             $shopManager = new ShopManager();
-            $article = $shopManager->selectArticleById($articleData['id']);
+            $article = $shopManager->selectArticleById($id);
             $_SESSION['article'][$id] = $article;
             if (isset($articleData['size'])) {
                 $_SESSION['article'][$id]['size'] = $articleData['size'];

@@ -30,6 +30,7 @@ class CartController extends AbstractController
         }
         // !!!!!!!! IMPORTANT !!!!! REMPLACER LA LIGNE CI DESSOUS POUR QUE LE PANNIER FONCTIONNE PAR : $carts[] = 0;
         $carts = [];
+        $carts[] = 0;
         foreach ($_SESSION['panier'] as $albumId => $quantite) {
             $albumManager = new CartManager();
             $data = $albumManager->selectOneByAlbumId($albumId);
@@ -49,7 +50,8 @@ class CartController extends AbstractController
             $cartTemp = []; // Je crée un tableau temporaire
             foreach ($_SESSION['panier'] as $albumId => $quantite) {
                 if ($id != $albumId) { // Si l'élément a supprimer n'est pas la ligne dans la panier
-                    $cartTemp[$albumId] = $_SESSION['panier'][$albumId]; // Alors je le rajoute dans mon tableau temporaire
+                    // Alors je le rajoute dans mon tableau temporaire
+                    $cartTemp[$albumId] = $_SESSION['panier'][$albumId];
                     $quantite = trim($quantite); //ligne inutile mais pour passer grump
                 }
             }
@@ -60,9 +62,8 @@ class CartController extends AbstractController
             $id2 = $_GET['id2'];
             $cartTemp2 = [];
             foreach ($_SESSION['article'] as $articleId => $quantite2) {
-                if ($id2 != $articleId) { // Si l'élément a supprimer n'est pas la ligne dans la panier
-                    $cartTemp2[$articleId] = $_SESSION['article'][$articleId]; // Alors je le rajoute dans mon tableau temporaire
-                    $quantite2 = trim($quantite2); //ligne inutile mais pour passer grump
+                if ($id2 != $articleId) {
+                    $cartTemp2[$articleId] = $_SESSION['article'][$articleId];
                 }
             }
             $_SESSION['article'] = $cartTemp2;

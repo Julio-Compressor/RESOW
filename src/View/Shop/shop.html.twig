@@ -2,10 +2,13 @@
 
 {% block title %}RESOW | Shop{% endblock %}
 
-{% block stylesheet %}<link rel="stylesheet" href="/assets/css/shop.css">{% endblock %}
+{% block stylesheet %}
+<link rel="stylesheet" href="/assets/css/discoBio.css">
+<link rel="stylesheet" href="/assets/css/shop.css">
+{% endblock %}
 
 {% block content %}
-	<section class="ariticle-shop">
+	<section class="article-shop">
 		<div class="row">
 			{% for article in articles %}
 				<form method="post" class="col-sm-4 mb-3 mb-sm-0" action="shop/add" data-article-id="{{article.nameCat}}">
