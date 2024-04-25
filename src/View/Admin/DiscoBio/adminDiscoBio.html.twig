@@ -1,0 +1,32 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block content %}
+<main>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">title</th>
+                <th scope="col">type</th>
+                <th scope="col">nb_track</th>
+                <th scope="col">price</th>
+                <th scope="col">date</th>
+                <th scope="col">description</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for album in albums %}
+        <tr>
+            <td>{{ album.title }}</td>
+            <td>{{ album.type }} </td>
+            <td>{{ album.nb_track }}</td>
+            <td>{{ album.price }}</td>
+            <td>{{ album.date }}</td>
+            <td><a href="/admin/discoBio/delete?id={{album.id}}">Delete</a></td>
+            <td><a href="discoBio/edit?id={{album.id}}">Edit</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <h1>>Ajouter un Album</h1>
+</main>
+{% endblock %}
