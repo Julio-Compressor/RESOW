@@ -14,10 +14,11 @@ class IndexManager extends AbstractManager
     public function addEvent(array $events)
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE .
-            " (`city`, `place`, `date`) VALUES (:title, :place, :date)");
+            " (`city`, `place`, `date`, `isSoldout`) VALUES (:city, :place, :date, :isSoldout)");
         $statement->bindValue('city', $events['city'], PDO::PARAM_STR);
         $statement->bindValue('place', $events['place'], PDO::PARAM_STR);
         $statement->bindValue('date', $events['date'], PDO::PARAM_STR);
+        $statement->bindValue('isSoldout', $events['isSoldout'], PDO::PARAM_BOOL);
 
         return $statement->execute();
     }
