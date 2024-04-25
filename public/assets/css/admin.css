@@ -1,0 +1,25 @@
+body {
+    background-color: #333;
+}
+main {
+    
+}
+label.form-label {
+    color:white
+}
+h1 {
+    color: white;
+    margin-bottom: 2rem;
+    
+}
+
+.modify-event {
+    width: 70vw;
+    margin: auto;
+}
+
+.add-event {
+    width: 40vw;
+    margin: auto;
+
+}

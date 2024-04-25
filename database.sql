@@ -1,4 +1,4 @@
--- Active: 1713452145964@@127.0.0.1@3306@straszik
+-- Active: 1713169810273@@127.0.0.1@3306@straszik
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
@@ -34,7 +34,7 @@ CREATE TABLE `album` (
     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `title` VARCHAR(250) NOT NULL, `type` VARCHAR(250) NOT NULL, `nb_track` INT NOT NULL, `price` FLOAT NOT NULL, `date` DATE NOT NULL, `description` TEXT NULL
 );
 
-TRUNCATE TABLE album;
+-- TRUNCATE TABLE album;
 
 INSERT INTO
     `album` (
@@ -56,9 +56,8 @@ VALUES (
         'Two Years Overdue', 'Demat\'', '5', '19.99', '2023-04-03', 'Format WAV & FLAC'
     );
 
-
 CREATE TABLE `form` (
-    `id` INT PRIMARY KEY AUTO_INCREMENT, `name` VARCHAR (100) NOT NULL, `firstname` VARCHAR (100) NOT NULL, `email` VARCHAR(100), `particulier` BOOLEAN NULL, `professionnel` BOOLEAN NULL, `message` TEXT NOT NULL 
+    `id` INT PRIMARY KEY AUTO_INCREMENT, `name` VARCHAR(100) NOT NULL, `firstname` VARCHAR(100) NOT NULL, `email` VARCHAR(100), `particulier` BOOLEAN NULL, `professionnel` BOOLEAN NULL, `message` TEXT NOT NULL
 );
 
 CREATE TABLE `article` (
@@ -67,7 +66,7 @@ CREATE TABLE `article` (
 
 -- DROP TABLE article;
 
-TRUNCATE TABLE article;
+-- TRUNCATE TABLE article;
 
 INSERT INTO
     `article` (
@@ -77,10 +76,10 @@ VALUES (
         'T-Shirt Homme', '19.99', '', 1, 'tshirt_homme-noir'
     ),
     (
-        'Sweat Shirt', '39.99', '', 4, 'sweat_noir'
+        'Sweat Shirt', '39.99', '', 4, 'sweat-noir'
     ),
     (
-        'Casquette', '24.99', '', 5, 'casquette_noir'
+        'Casquette', '24.99', '', 5, 'casquette-noir'
     ),
     (
         'Grinder Multi', '15', '', 7, 'grinder'
@@ -106,7 +105,7 @@ VALUES ('tshirt_homme'),
     ('other');
 
 -- table user --
-DROP TABLE `user`;
+-- DROP TABLE `user`;
 
 CREATE TABLE `user` (
     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `firstname` VARCHAR(50) NOT NULL, `lastname` VARCHAR(50) NOT NULL, `password` VARCHAR(255) NOT NULL, `email` VARCHAR(100) NOT NULL, `address` VARCHAR(255) NULL, `address2` VARCHAR(255) NULL, `zip_code` INT NULL, `pays` VARCHAR(60) NULL, `phone` INT NULL, `
@@ -130,7 +129,6 @@ VALUES (
     (
         'Admin', 'Anae', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@anae.fr'
     );
-
 
 CREATE TABLE `item` (
     `id` int(11) UNSIGNED NOT NULL, `title` varchar(255) NOT NULL
@@ -168,10 +166,10 @@ MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 3;
 -- Structure de la table `onTour`
 --
 CREATE TABLE `events` (
-    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `city` VARCHAR(100) NOT NULL, `place` VARCHAR(100) NOT NULL, `date` DATE NOT NULL, `isSoldout` BOOL NOT NULL
+    `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL, `city` VARCHAR(100) NOT NULL, `place` VARCHAR(100) NOT NULL, `date` VARCHAR(100) NOT NULL, `isSoldout` BOOL NOT NULL
 );
 
-TRUNCATE TABLE `events`;
+-- TRUNCATE TABLE `events`;
 
 INSERT INTO
     `events` (
