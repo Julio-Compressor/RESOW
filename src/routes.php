@@ -16,7 +16,7 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
-    'Contact' => ['ContactController', 'add'],
+    'contact' => ['ContactController', 'add'],
     'Contact/show' => ['ContactController','show', ['id']],
     'register' => ['UserController', 'register',],
     'login' => ['UserController', 'login',],

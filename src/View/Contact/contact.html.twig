@@ -1,5 +1,6 @@
 {% extends 'layout.html.twig' %}
 {% block title %}RESOW | Contact{% endblock %}
+{% block stylesheet %}<link rel="stylesheet" href="/assets/css/contact.css">{% endblock %}
 {% block content %}
     <main class='FormContact'>
         <section class="ContactForm">
@@ -23,7 +24,7 @@
             </fieldset>
 
             <label class='message' for="Message">Message</label>
-                <textarea class= 'ContactMessage' name='message'></textarea>
+                <textarea class= 'ContactMessage' name='message' rows='10' cols="1" maxrows="10" maxcols="1" maxlength="30" style="resize:none;" wrap="hard">></textarea>
 
                 <input class='ContactBouton' type="submit" value="Envoyer">
         </form>
