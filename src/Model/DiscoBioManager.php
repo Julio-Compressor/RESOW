@@ -23,4 +23,18 @@ class DiscoBioManager extends AbstractManager
 
         return $statement->execute();
     }
+    public function addAlbum(array $album)
+    {
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE .
+            " (`title`,`type`, `nb_track`, `price`, `date`, `description`) 
+        VALUES (:title, :type, :nb_track, :price, :date, :description)");
+        $statement->bindValue('title', ucwords($album['title']), PDO::PARAM_STR);
+        $statement->bindValue('type', ucwords($album['type']), PDO::PARAM_STR);
+        $statement->bindValue('nb_track', intval($album['nb_track']), PDO::PARAM_INT);
+        $statement->bindValue('price', floatval($album['price']), PDO::PARAM_STR);
+        $statement->bindValue('date', $album['date'], PDO::PARAM_STR);
+        $statement->bindValue('description', $album['description'], PDO::PARAM_STR);
+
+        return $statement->execute();
+    }
 }

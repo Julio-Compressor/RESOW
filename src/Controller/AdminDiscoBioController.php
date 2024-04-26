@@ -32,4 +32,25 @@ class AdminDiscoBioController extends AbstractController
             return null;
         }
     }
+    public function add()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $newAlbum = array_map('trim', $_POST);
+
+            $albumManager = new DiscoBioManager();
+            $albumManager->addAlbum($newAlbum);
+            header('location: /admin/discoBio');
+            return null;
+        }
+    }
+    public function delete(int $id)
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            $id = $_GET['id'];
+            $albumManager = new DiscoBioManager();
+            $albumManager->delete((int)$id);
+
+            header('location: /admin/discoBio');
+        }
+    }
 }
