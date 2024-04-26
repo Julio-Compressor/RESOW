@@ -9,6 +9,11 @@ class AdminEventsController extends AbstractController
 {
     public function index(): string
     {
+        if ((!$this->user )) {
+            echo 'Accès non autorisé';
+            header('Location: /error');
+        }
+
         $events = new IndexManager();
         $events = $events->selectAll();
 
