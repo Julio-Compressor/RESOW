@@ -40,7 +40,18 @@ return [
     'admin/users/add' => ['AdminUsersController', 'add'],
     'admin/discoBio/add' => ['AdminDiscoBioController', 'add'],
     'admin/discoBio/delete' => ['AdminDiscoBioController', 'delete', ['id']],
-    'admin/shop' => ['AdminEventsController', 'index'],
+    'admin/shop' => ['AdminShopController', 'index'],
+    'admin/shop/edit' => ['AdminShopController', 'editArticle', ['id']],
+    'admin/shop/editCategory' => ['AdminShopController', 'editCategory', ['id']],
+    'admin/shop/update' => ['AdminShopController', 'update', ['id']],
+    'admin/shop/add' => ['AdminShopController', 'add',],
+    'admin/shop/delete' => ['AdminShopController', 'delete', ['id'],],
+    'admin/shop/updateCategory' => ['AdminShopController', 'updateCategory', ['id']],
+    'admin/shop/addCategory' => ['AdminShopController', 'addCategory',],
+    'admin/shop/deleteCategory' => ['AdminShopController', 'deleteCategory', ['id']],
+
+
+
     'admin/users' => ['AdminEventsController', 'index'],
     'admin/contact' => ['AdminContactController', 'show']
 ];
