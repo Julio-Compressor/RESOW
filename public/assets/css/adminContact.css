@@ -1,3 +1,5 @@
-.ContactInfo {
-    color: white;
+.messageAdmin {
+    word-wrap: break-word;
+    max-width: 65ch;
+
 }

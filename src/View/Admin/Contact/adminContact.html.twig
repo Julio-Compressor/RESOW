@@ -1,23 +1,40 @@
 {% extends 'layoutAdmin.html.twig' %}
 
-{% block title %}RESOW | Contact{% endblock %}
+{% block title %}RESOW | Contact
+{% endblock %}
 {% block stylesheet %}
-<link rel="stylesheet" href="/assets/css/admin.css">
-<link rel="stylesheet" href="/assets/css/adminContact.css">
+	<link rel="stylesheet" href="/assets/css/admin.css">
+	<link rel="stylesheet" href="/assets/css/adminContact.css">
 {% endblock %}
 {% block content %}
-<main class='ContactInfo'>
-    <h2 class="ContactShow">Contact</h2>
-    <div class='ContactUserInfo'>
-        <h3 class='InfoRecap'>Vos Messages</h3>
-        <p class= 'RecapNom'>{{contact.name}} {{contact.firstname | raw}}</p>
-        <p class='RecapMail'>{{contact.email}}</p>
-        {% if contact.professionnel == 1 %}
-        <p class='RecapStatut'>professionel</p>
-        {% else %}
-            <p class='RecapStatut'>particulier</p>
-        {% endif %}
-        <p class='RecapMessage'>{{contact.message}}</p>
-    </div>
-</main>
+	<div class="modify-event">
+		<h1>Vos messages</h1>
+		<table class="table table-dark table-striped">
+			<thead>
+				<tr>
+					<th>Nom</th>
+					<th>Prénom</th>
+					<th>Email</th>
+					<th>Statut</th>
+					<th>Message</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for contact in contacts %}
+
+					<tr>
+						<td>{{ contact.name | raw }}</td>
+						<td>{{ contact.firstname | raw }}</td>
+						<td>{{ contact.email }}</td>
+						{% if contact.professionnel == 1 %}
+							<td class='RecapStatut'>professionel</td>
+						{% else %}
+							<td class='RecapStatut'>particulier</td>
+						{% endif %}
+						<td class="messageAdmin">{{ contact.message }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
 {% endblock %}
