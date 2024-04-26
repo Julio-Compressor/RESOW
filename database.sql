@@ -1,4 +1,4 @@
--- Active: 1713169372026@@127.0.0.1@3306@straszik
+-- Active: 1713169810273@@127.0.0.1@3306@straszik
 
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
@@ -109,8 +109,7 @@ VALUES ('tshirt_homme'),
 -- DROP TABLE `user`;
 
 CREATE TABLE `user` (
-    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `firstname` VARCHAR(50) NOT NULL, `lastname` VARCHAR(50) NOT NULL, `password` VARCHAR(255) NOT NULL, `email` VARCHAR(100) NOT NULL, `address` VARCHAR(255) NULL, `address2` VARCHAR(255) NULL, `zip_code` INT NULL, `pays` VARCHAR(60) NULL, `phone` INT NULL, 
-    `is_newsletter` BOOL NULL, `is_admin` BOOL NULL
+    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `firstname` VARCHAR(50) NOT NULL, `lastname` VARCHAR(50) NOT NULL, `password` VARCHAR(255) NOT NULL, `email` VARCHAR(100) NOT NULL, `address` VARCHAR(255) NULL, `address2` VARCHAR(255) NULL, `zip_code` INT NULL, `pays` VARCHAR(60) NULL, `phone` INT NULL, `is_newsletter` BOOL NULL, `is_admin` BOOL NULL
 );
 
 -- contenu de la table user --
