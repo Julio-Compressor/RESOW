@@ -34,6 +34,8 @@ return [
     'admin/discoBio' => ['AdminDiscoBioController', 'index'],
     'admin/discoBio/edit' => ['AdminDiscoBioController', 'edit', ['id']],
     'admin/discoBio/update' => ['AdminDiscoBioController', 'update', ['id']],
+    'admin/discoBio/add' => ['AdminDiscoBioController', 'add'],
+    'admin/discoBio/delete' => ['AdminDiscoBioController', 'delete', ['id']],
     'admin/shop' => ['AdminEventsController', 'index'],
     'admin/users' => ['AdminEventsController', 'index'],
     'admin/contact' => ['AdminContactController', 'show']
