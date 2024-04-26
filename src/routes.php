@@ -34,7 +34,6 @@ return [
     'admin/discoBio' => ['AdminDiscoBioController', 'index'],
     'admin/discoBio/edit' => ['AdminDiscoBioController', 'edit', ['id']],
     'admin/discoBio/update' => ['AdminDiscoBioController', 'update', ['id']],
-    'admin/shop' => ['AdminShopController', 'index'],
     'admin/users' => ['AdminUsersController', 'index'],
     'admin/users/delete' => ['AdminUsersController', 'delete', ['id']],
     'admin/users/add' => ['AdminUsersController', 'add'],
@@ -49,9 +48,6 @@ return [
     'admin/shop/updateCategory' => ['AdminShopController', 'updateCategory', ['id']],
     'admin/shop/addCategory' => ['AdminShopController', 'addCategory',],
     'admin/shop/deleteCategory' => ['AdminShopController', 'deleteCategory', ['id']],
-
-
-
-    'admin/users' => ['AdminEventsController', 'index'],
-    'admin/contact' => ['AdminContactController', 'show']
+    'admin/contact' => ['AdminContactController', 'show'],
+    'compte/delete' => ['UserController' , 'delete', ['id']],
 ];
