@@ -37,4 +37,5 @@ return [
     'admin/shop' => ['AdminShopController', 'index'],
     'admin/users' => ['AdminUsersController', 'index'],
     'admin/users/delete' => ['AdminUsersController', 'delete', ['id']],
+    'admin/users/add' => ['AdminUsersController', 'add'],
 ];
