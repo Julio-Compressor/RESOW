@@ -36,4 +36,5 @@ return [
     'admin/discoBio/update' => ['AdminDiscoBioController', 'update', ['id']],
     'admin/shop' => ['AdminEventsController', 'index'],
     'admin/users' => ['AdminEventsController', 'index'],
+    'compte/delete' => ['UserController' , 'delete', ['id']],
 ];
