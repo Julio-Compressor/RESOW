@@ -18,7 +18,7 @@ class ContactController extends AbstractController
             $contactManager = new ContactManager();
             $contactManager->insert($datacontact);
 
-            header('Location: /Contact/show');
+            header('Location: contact/show');
             return null;
         }
 
@@ -29,6 +29,6 @@ class ContactController extends AbstractController
         $contactManager = new ContactManager();
         $contact = $contactManager->lastContactMessage();
 
-        return $this->twig->render('Contact/show.html.twig', ['contact' => $contact]);
+        return $this->twig->render('Contact/Show/show.html.twig', ['contact' => $contact]);
     }
 }

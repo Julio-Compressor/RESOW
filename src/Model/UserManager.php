@@ -37,8 +37,16 @@ class UserManager extends AbstractManager
     {
 
         $statement = $this->pdo->prepare("UPDATE " . static::TABLE .
-        " SET password=:password WHERE email=:email");
+        " SET password=:password, firstname=:firstname, lastname=:lastname, address=:address, 
+        address2=:address2, zip_code=:zip_code, pays=:pays, phone=:phone WHERE email=:email");
         $statement->bindValue(':email', $userdata['email'], PDO::PARAM_STR);
+        $statement->bindValue(':firstname', $userdata['firstname'], PDO::PARAM_STR);
+        $statement->bindValue(':lastname', $userdata['lastname'], PDO::PARAM_STR);
+        $statement->bindValue(':address', $userdata['address'], PDO::PARAM_STR);
+        $statement->bindValue(':address2', $userdata['address2'], PDO::PARAM_STR);
+        $statement->bindValue(':zip_code', $userdata['zip_code'], PDO::PARAM_STR);
+        $statement->bindValue(':pays', $userdata['pays'], PDO::PARAM_STR);
+        $statement->bindValue(':phone', $userdata['phone'], PDO::PARAM_STR);
         $statement->bindValue(':password', password_hash($userdata['password'], PASSWORD_DEFAULT));
         $statement->execute();
 

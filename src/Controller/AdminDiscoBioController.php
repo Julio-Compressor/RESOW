@@ -8,6 +8,11 @@ class AdminDiscoBioController extends AbstractController
 {
     public function index(): string
     {
+        if ((!$this->user )) {
+            echo 'Accès non autorisé';
+            header('Location: /error');
+        }
+
         $albumsManager = new DiscoBioManager();
         $albums = $albumsManager->selectAll();
 

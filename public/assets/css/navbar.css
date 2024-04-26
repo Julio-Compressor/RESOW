@@ -41,7 +41,7 @@
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #6c757d;
     --bs-btn-disabled-border-color: #6c757d;
-    margin-top: 1.2rem;
+    margin-top: 1.0rem;
     font-family: var(--nav-font);
     font-size: 1,1rem;
 }

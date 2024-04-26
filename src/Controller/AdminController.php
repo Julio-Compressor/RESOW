@@ -9,6 +9,11 @@ class AdminController extends AbstractController
 {
     public function index(): string
     {
+        if ((!$this->user )) {
+            echo 'Accès non autorisé';
+            header('Location: /error');
+        }
+
         return $this->twig->render('Admin/admin.html.twig');
     }
 }
