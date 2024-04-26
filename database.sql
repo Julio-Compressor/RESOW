@@ -1,4 +1,4 @@
--- Active: 1713169810273@@127.0.0.1@3306@straszik
+-- Active: 1713169372026@@127.0.0.1@3306@straszik
 
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
@@ -119,16 +119,16 @@ INSERT INTO
         `firstname`, `lastname`, `password`, `email`, `is_admin`
     )
 VALUES (
-        'Admin', 'Niko', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@niko.fr', '1'
+        'Admin', 'Niko', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@niko.fr', 1
     ),
     (
-        'Admin', 'Julien', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@julien.fr' '1'
+        'Admin', 'Julien', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@julien.fr', 1
     ),
     (
-        'Admin', 'Matthieu', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@matthieu.fr' '1'
+        'Admin', 'Matthieu', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@matthieu.fr', 1
     ),
     (
-        'Admin', 'Anae', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@anae.fr' '1'
+        'Admin', 'Anae', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@anae.fr', 1
     );
 
 CREATE TABLE `item` (
