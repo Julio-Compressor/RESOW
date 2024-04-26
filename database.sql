@@ -1,4 +1,4 @@
--- Active: 1713169810273@@127.0.0.1@3306@straszik
+-- Active: 1713169372026@@127.0.0.1@3306@straszik
 
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
@@ -62,7 +62,7 @@ CREATE TABLE `form` (
 );
 
 CREATE TABLE `article` (
-    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `name` VARCHAR(250) NOT NULL, `price` FLOAT NOT NULL, `description` TEXT NULL, category_id INT NOT NULL REFERENCES `category_article` (id), `img_name` VARCHAR(250) NOT NULL
+    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `name` VARCHAR(250) NOT NULL, `price` FLOAT NOT NULL, `description` TEXT NULL, `category_id` INT NOT NULL REFERENCES `category_article` (id), `img_name` VARCHAR(250) NOT NULL
 );
 
 -- DROP TABLE article;

@@ -1,16 +1,18 @@
 {% extends 'layoutAdmin.html.twig' %}
 
 {% block content %}
-<main>
+<section>
+    <h1>Edition des Albums</h1>
     <table class="table table-dark table-striped">
         <thead>
             <tr>
-                <th scope="col">title</th>
-                <th scope="col">type</th>
-                <th scope="col">nb_track</th>
-                <th scope="col">price</th>
-                <th scope="col">date</th>
-                <th scope="col">description</th>
+                <th scope="col">TITLE</th>
+                <th scope="col">TYPE</th>
+                <th scope="col">NB_TRACK</th>
+                <th scope="col">PRICE</th>
+                <th scope="col">DATE</th>
+                <th scope="col">DESCRIPTION</th>
+                <th scope="col">VALIDATION</th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +29,6 @@
         {% endfor %}
         </tbody>
     </table>
-    <h1>>Ajouter un Album</h1>
-</main>
+    <h1>Ajouter un Album</h1>
+</section>
 {% endblock %}

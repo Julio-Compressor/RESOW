@@ -12,18 +12,9 @@ class UserController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $userdata = array_map('trim', $_POST);
 
-
             if (!empty($userdata['email'])) {
                 $errors[] = 'L\'adresse email ou le mot de passe n\'est pas valide';
             }
-
-            // if (filter_var($credentials['email'], FILTER_VALIDATE_EMAIL) === false) {
-            //     $errors[] = 'email obligatoire';
-            // }
-
-            // if (empty($credentials['password'])) {
-            //     $errors[] = 'Le mot de passe est obligatoire';
-            // }
 
             $userManager = new UserManager();
             $user = $userManager->selectOneByEmail($userdata['email']);
@@ -46,20 +37,15 @@ class UserController extends AbstractController
             if (filter_var($userdata['email'], FILTER_VALIDATE_EMAIL) === false) {
                 $errors[] = 'veuillez entrez un email';
             }
-
             if (empty($userdata['firstname'])) {
                 $errors[] = 'veuillez entrez un prénom';
             }
-
             if (empty($userdata['lastname'])) {
                 $errors[] = 'veuillez entrez un Nom';
             }
-
             if (empty($userdata['password'])) {
                 $errors[] = 'veuillez entrez un mot de passe';
             }
-
-
             if (empty($errors)) {
                 $userManager = new UserManager();
                 $userManager->insert($userdata);
@@ -68,7 +54,6 @@ class UserController extends AbstractController
         }
         return $this->twig->render('User/register.html.twig', ['errors' => $errors]);
     }
-
 
     public function logout()
     {
@@ -79,6 +64,10 @@ class UserController extends AbstractController
 
     public function resetpassword()
     {
+        if ((!$this->user )) {
+            echo 'Accès non autorisé';
+            header('Location: /error');
+        }
         $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $userdata = array_map('trim', $_POST);
@@ -86,11 +75,9 @@ class UserController extends AbstractController
             if (filter_var($userdata['email'], FILTER_VALIDATE_EMAIL) === false) {
                 $errors[] = 'veuillez entrez un email';
             }
-
             if (empty($userdata['password'])) {
                 $errors[] = 'veuillez entrez un mot de passe';
             }
-
             if (empty($errors)) {
                 $userManager = new UserManager();
                 $userManager->update($userdata);

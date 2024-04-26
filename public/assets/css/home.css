@@ -1,5 +1,4 @@
 body {
-
     min-height: 100vh;
     margin: 0;
     background-color: #0000007d;
@@ -13,14 +12,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
 }
 
 h1,
 h2,
 h3 {
     font-family: var(--title-font);
-
 }
 
 h1 {
