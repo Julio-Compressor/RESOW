@@ -12,7 +12,6 @@ class UserManager extends AbstractManager
     {
         $statement = $this->pdo->prepare("SELECT * FROM " . self::TABLE . " WHERE email = :email ");
         $statement->bindValue('email', $email, \PDO::PARAM_STR);
-
         $statement->execute();
 
         return $statement->fetch();
@@ -22,7 +21,6 @@ class UserManager extends AbstractManager
 
     public function insert(array $userdata)
     {
-
         $statement = $this->pdo->prepare("INSERT INTO " . static::TABLE .
             " (`email`, `password`, `firstname`, `lastname`)
             VALUES (:email, :password, :firstname, :lastname)");
@@ -34,7 +32,6 @@ class UserManager extends AbstractManager
 
         return (int)$this->pdo->lastInsertId();
     }
-
 
     public function update(array $userdata)
     {

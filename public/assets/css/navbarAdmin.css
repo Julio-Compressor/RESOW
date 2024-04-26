@@ -1,0 +1,17 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 20vw;
+    background-color: rgb(20, 20, 20);
+    height: 100vh;
+}
+
+.bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    width: 200px;
+    border: solid grey;
+    border-radius: 5px;
+}

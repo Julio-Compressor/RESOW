@@ -62,7 +62,7 @@ CREATE TABLE `form` (
 );
 
 CREATE TABLE `article` (
-    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `name` VARCHAR(250) NOT NULL, `price` FLOAT NOT NULL, `description` TEXT NULL, category_id INT NOT NULL REFERENCES `category_article` (id), `img_name` VARCHAR(250) NOT NULL
+    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `name` VARCHAR(250) NOT NULL, `price` FLOAT NOT NULL, `description` TEXT NULL, `category_id` INT NOT NULL REFERENCES `category_article` (id), `img_name` VARCHAR(250) NOT NULL
 );
 
 -- DROP TABLE article;
@@ -114,7 +114,7 @@ is_newsletter` BOOL NULL, `is_admin` BOOL NULL
 );
 
 -- contenu de la table user --
-INSERT INTO 
+INSERT INTO
     `user` (
         `firstname`, `lastname`, `password`, `email`, `is_admin`
     )
