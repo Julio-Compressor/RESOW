@@ -38,4 +38,5 @@ return [
     'admin/discoBio/delete' => ['AdminDiscoBioController', 'delete', ['id']],
     'admin/shop' => ['AdminEventsController', 'index'],
     'admin/users' => ['AdminEventsController', 'index'],
+    'admin/contact' => ['AdminContactController', 'show']
 ];
