@@ -1,0 +1,23 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block title %}RESOW | Contact{% endblock %}
+{% block stylesheet %}
+<link rel="stylesheet" href="/assets/css/admin.css">
+<link rel="stylesheet" href="/assets/css/adminContact.css">
+{% endblock %}
+{% block content %}
+<main class='ContactInfo'>
+    <h2 class="ContactShow">Contact</h2>
+    <div class='ContactUserInfo'>
+        <h3 class='InfoRecap'>Vos Messages</h3>
+        <p class= 'RecapNom'>{{contact.name}} {{contact.firstname | raw}}</p>
+        <p class='RecapMail'>{{contact.email}}</p>
+        {% if contact.professionnel == 1 %}
+        <p class='RecapStatut'>professionel</p>
+        {% else %}
+            <p class='RecapStatut'>particulier</p>
+        {% endif %}
+        <p class='RecapMessage'>{{contact.message}}</p>
+    </div>
+</main>
+{% endblock %}
