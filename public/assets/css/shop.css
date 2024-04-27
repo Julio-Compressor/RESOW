@@ -107,3 +107,9 @@ li.list-group-item label.btn.btn-secondary {
     -ms-overflow-style: none; 
     scrollbar-width: none; 
 }
+
+.title-shop{
+    font-family: var(--title-font);
+    color: var(--bleu);
+    font-size: 2rem;
+}

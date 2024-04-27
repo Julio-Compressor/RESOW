@@ -9,6 +9,10 @@ class AdminShopController extends AbstractController
 {
     public function index(): string
     {
+        if ((!$this->user )) {
+            echo 'Accès non autorisé';
+            header('Location: /error');
+        }
         $categoryManager = new ShopManager();
         $categories = $categoryManager->selectAllCategories();
 

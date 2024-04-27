@@ -1,0 +1,69 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.card-body{
+background-color: rgba(0, 0, 0, 0.61);
+border-radius: 2rem;
+width: 50rem;
+height: 48rem;
+margin-left: -11.5rem;
+}
+
+/* html { overflow-y: hidden; }  */
+
+html {
+    overflow-y: hidden;
+}
+
+.bg-dark {
+    --bs-bg-opacity: 0;
+    color: white;
+    border-radius: 1rem;
+}
+
+.text-uppercase {
+    text-transform: uppercase !important;
+    text-align: center;
+}
+
+.text-white-50 {
+    --bs-text-opacity: 1;
+    color: rgba(255, 255, 255, .5) !important;
+    text-align: center;
+}
+
+.form-label {
+    margin-bottom: .5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+    margin-top: -2rem;
+    color: var(--jaune);
+}
+
+.form-control {
+    display: block;
+    align-items: center;
+    width: 50%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
