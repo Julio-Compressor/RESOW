@@ -2,7 +2,7 @@
     <div class="uk-container">
         <div uk-navbar>
             <div class="uk-navbar-item uk-logo">
-                <img src="/../../../assets/images/logo_header.png">
+                <img src="/assets/images/logo_header.png">
             </div>
             <div class="uk-navbar-center">
                 <ul class="uk-navbar-nav link">
@@ -16,24 +16,24 @@
                 <ul class="uk-navbar-nav">
                     {% if user %}
                     {% if user['is_admin'] == true %}
-                    <li><img src=".\assets\images\staff.png" class="staff-logo"/></li>
+                    <li><img src="\assets\images\staff.png" class="staff-logo"/></li>
                     {% endif %}
                 <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 {{user.lastname}}</button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="/compte"><img src=".\assets\images\compte.png " class="deconnexion-button"/> Mon compte</a></li>
+                    <li><a class="dropdown-item" href="/compte"><img src="\assets\images\compte.png " class="deconnexion-button"/> Mon compte</a></li>
                     {% if user['is_admin'] == true %}
-                    <li><a class="dropdown-item" href="/admin"/><img src=".\assets\images\admin.png" class="deconnexion-button"/> Admin</a></li>
+                    <li><a class="dropdown-item" href="/admin"/><img src="\assets\images\admin.png" class="deconnexion-button"/> Admin</a></li>
                     {% endif %}
-                    <li><a class="dropdown-item" href="/logout"><img src=".\assets\images\logout.png" class="deconnexion-button"/> Deconnexion</a></li>
+                    <li><a class="dropdown-item" href="/logout"><img src="\assets\images\logout.png" class="deconnexion-button"/> Deconnexion</a></li>
                 </ul>
             </div>
                     {% else %}
                     <li><a href="/login">Connexion</a></li>
                     <li><a href="/register">S'enregistrer</a></li>
                     {% endif %}
-                    <li><a href="cart">panier</a></li>
+                    <li><a href="/cart">panier</a></li>
                 </ul>
             </div>
         </div>
