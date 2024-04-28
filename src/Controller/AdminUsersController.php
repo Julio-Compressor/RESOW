@@ -9,6 +9,10 @@ class AdminUsersController extends AbstractController
 {
     public function index(): string
     {
+        if ((!$this->user )) {
+            echo 'Accès non autorisé';
+            header('Location: /error');
+        }
         $users = new AdminManager();
         $users = $users->selectAll();
 

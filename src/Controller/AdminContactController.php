@@ -8,6 +8,10 @@ class AdminContactController extends AbstractController
 {
     public function show()
     {
+        if ((!$this->user )) {
+            echo 'Accès non autorisé';
+            header('Location: /error');
+        }
         $contactManager = new ContactManager();
         $contacts = $contactManager->selectAll();
 

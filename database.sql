@@ -115,19 +115,19 @@ CREATE TABLE `user` (
 -- contenu de la table user --
 INSERT INTO
     `user` (
-        `firstname`, `lastname`, `password`, `email`, `is_admin`
+        `firstname`, `lastname`, `password`, `email`, `address`, `address2`, `zip_code`, `pays`, `phone`, `is_admin`
     )
 VALUES (
-        'Admin', 'Niko', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@niko.fr', 1
+        'Admin', 'Niko', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@niko.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67000, 'France', 0625674698, 1
     ),
     (
-        'Admin', 'Julien', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@julien.fr', 1
+        'Admin', 'Julien', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@julien.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67000, 'France', 0625674698, 1
     ),
     (
-        'Admin', 'Matthieu', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@matthieu.fr', 1
+        'Admin', 'Matthieu', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@matthieu.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67000, 'France', 0625674698, 1
     ),
     (
-        'Admin', 'Anae', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@anae.fr', 1
+        'Admin', 'Anae', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@anae.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67000, 'France', 0625674698, 1
     );
 
 CREATE TABLE `item` (
