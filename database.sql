@@ -1,4 +1,4 @@
--- Active: 1713169372026@@127.0.0.1@3306@straszik
+-- Active: 1711385285915@@127.0.0.1@3306@straszik
 
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
@@ -136,8 +136,6 @@ VALUES (
         'User', 'Yavouz', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'user@yavouz.fr', 'Boulevard du President Wilson, ', '45 avenue de Wild Code School', 67000, 'France', '0655674792', 0
     );
 
-
-    
 CREATE TABLE `item` (
     `id` int(11) UNSIGNED NOT NULL, `title` varchar(255) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
@@ -174,41 +172,42 @@ MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 3;
 -- Structure de la table `onTour`
 --
 CREATE TABLE `events` (
-    `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL, `city` VARCHAR(100) NOT NULL, `place` VARCHAR(100) NOT NULL, `date` VARCHAR(100) NOT NULL, `isSoldout` BOOL NOT NULL
+    `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL, `city` VARCHAR(100) NOT NULL, `place` VARCHAR(100) NOT NULL, `date` VARCHAR(100) NOT NULL, `isSoldout` BOOL NOT NULL, `ticket_link` VARCHAR(500) NULL
 );
 
 -- TRUNCATE TABLE `events`;
+-- DROP Table events;
 
 INSERT INTO
     `events` (
-        `city`, `place`, `date`, `isSoldout`
+        `city`, `place`, `date`, `isSoldout`, `ticket_link`
     )
 VALUES (
-        'EVREUX', 'Le Kubb', '2024-04-27', false
+        'EVREUX', 'Le Kubb', '2024-04-27', false, 'https://billetterie.epcc-ele.com/spectacle?id_spectacle=1617&lng=1'
     ),
     (
-        'LILLE', 'Le Bidule', '2024-07-25', true
+        'LILLE', 'Le Bidule', '2024-07-25', true, 'https://www.facebook.com/Bidule59/?locale=fr_FR'
     ),
     (
-        'PARIS', 'La Maroquinerie', '2024-05-18', false
+        'PARIS', 'La Maroquinerie', '2024-05-18', false, 'https://www.fnacspectacles.com/event/hurray-for-the-riff-raff-la-maroquinerie-paris-20-17839897/'
     ),
     (
-        'STRASBOURG', 'La Laiterie', '2024-06-08', false
+        'STRASBOURG', 'La Laiterie', '2024-06-08', false, NULL
     ),
     (
-        'LYON', 'Le Farmer', '2024-08-17', false
+        'LYON', 'Le Farmer', '2024-08-17', false, NULL
     ),
     (
-        'MARSEILLE', 'La Magalone', '2024-08-31', false
+        'MARSEILLE', 'La Magalone', '2024-08-31', false, NULL
     ),
     (
-        'NICE', 'Palais Nkaïa', '2024-09-07', false
+        'NICE', 'Palais Nkaïa', '2024-09-07', false, NULL
     ),
     (
-        'BORDEAUX', 'Arkea Arena', '2024-09-21', true
+        'BORDEAUX', 'Arkea Arena', '2024-09-21', true, NULL
     ),
     (
-        'NANTES', 'Warehouse', '2024-10-05', false
+        'NANTES', 'Warehouse', '2024-10-05', false, NULL
     );
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
