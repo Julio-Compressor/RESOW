@@ -37,6 +37,7 @@ return [
     'admin/users' => ['AdminUsersController', 'index'],
     'admin/users/delete' => ['AdminUsersController', 'delete', ['id']],
     'admin/users/add' => ['AdminUsersController', 'add'],
+    'admin/users/update' => ['AdminUsersController', 'update', ['id']],
     'admin/discoBio/add' => ['AdminDiscoBioController', 'add'],
     'admin/discoBio/delete' => ['AdminDiscoBioController', 'delete', ['id']],
     'admin/shop' => ['AdminShopController', 'index'],
