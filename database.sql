@@ -109,7 +109,7 @@ VALUES ('tshirt_homme'),
 -- DROP TABLE `user`;
 
 CREATE TABLE `user` (
-    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `firstname` VARCHAR(50) NOT NULL, `lastname` VARCHAR(50) NOT NULL, `password` VARCHAR(255) NOT NULL, `email` VARCHAR(100) NOT NULL, `address` VARCHAR(255) NULL, `address2` VARCHAR(255) NULL, `zip_code` INT NULL, `pays` VARCHAR(60) NULL, `phone` INT NULL, `is_newsletter` BOOL NULL, `is_admin` BOOL NULL
+    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `firstname` VARCHAR(50) NOT NULL, `lastname` VARCHAR(50) NOT NULL, `password` VARCHAR(255) NOT NULL, `email` VARCHAR(100) NOT NULL, `address` VARCHAR(255) NULL, `address2` VARCHAR(255) NULL, `zip_code` INT NULL, `pays` VARCHAR(60) NULL, `phone` VARCHAR(15) NULL, `is_newsletter` BOOL NULL, `is_admin` BOOL NULL
 );
 
 -- contenu de la table user --
@@ -118,19 +118,22 @@ INSERT INTO
         `firstname`, `lastname`, `password`, `email`, `address`, `address2`, `zip_code`, `pays`, `phone`, `is_admin`
     )
 VALUES (
-        'Admin', 'Niko', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@niko.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67000, 'France', 0625674698, 1
+        'Admin', 'Niko', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@niko.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 37510, 'France', '0625674698', 1
     ),
     (
-        'Admin', 'Julien', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@julien.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67000, 'France', 0625674698, 1
+        'Admin', 'Julien', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@julien.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 27220, 'France', '0625674698', 1
     ),
     (
-        'Admin', 'Matthieu', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@matthieu.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67000, 'France', 0625674698, 1
+        'Admin', 'Matthieu', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@matthieu.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67117, 'France', '0625674698', 1
     ),
     (
-        'Admin', 'Anae', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@anae.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67000, 'France', 0625674698, 1
+        'Admin', 'Anae', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@anae.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 44000, 'France', '0625674698', 1
     ),
     (
-        'User', 'Vincent', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'user@vincent.fr', '20 eme arrondissement de paris', '45 avenue de la Wild Code School', 75000, 'France', 0655674792, 0
+        'User', 'Vincent', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'user@vincent.fr', '20 eme arrondissement de paris', '45 avenue de la Wild Code School', 75000, 'France', '0655674792', 0
+    ),
+    (
+        'User', 'Yavouz', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'user@yavouz.fr', 'Boulevard du President Wilson, ', '45 avenue de Wild Code School', 67000, 'France', '0655674792', 0
     );
 
 
