@@ -41,7 +41,7 @@
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #6c757d;
     --bs-btn-disabled-border-color: #6c757d;
-    margin-top: 1.2rem;
+    margin-top: 1.0rem;
     font-family: var(--nav-font);
     font-size: 1,1rem;
 }
@@ -107,6 +107,15 @@ button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle{
 .deconnexion-button{
     height: 30px;
     width: 30px;
+}
+
+.staff-logo{
+ height: 23px;
+    width: 30px;
+    margin-left: -0.8rem;
+    margin-top: 0.8rem;
+    position: absolute;
+
 }
 .uk-navbar-right li a {
     font-size: 1.1rem;

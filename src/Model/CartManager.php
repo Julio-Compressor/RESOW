@@ -8,7 +8,6 @@ use PDO;
 class CartManager extends AbstractManager
 {
     protected PDO $pdo;
-
     public const TABLE = 'album';
 
     public function selectOneByAlbumId(string $albumId)

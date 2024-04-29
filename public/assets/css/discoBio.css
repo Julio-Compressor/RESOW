@@ -1,3 +1,9 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .contenu-discobio {
     margin: auto;
     height: 80vh;

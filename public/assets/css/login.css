@@ -1,8 +1,19 @@
-.card-body {
-    background-color: rgba(0, 0, 0, 0.61);
-    border-radius: 2rem;
-    width: 30rem;
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+
+.card-body{
+background-color: rgba(0, 0, 0, 0.61);
+border-radius: 2rem;
+width: 30rem;
+height: 48rem;
+}
+
+/* html { overflow-y: hidden; }  */
 
 html {
     overflow-y: hidden;
@@ -31,6 +42,46 @@ html {
     justify-content: center;
 }
 
-.vh-80.gradient-custom {
-    height: 80vh;
+.coming{
+    font-size: 2.5rem;
+    font-family: var(--nav-font) ;
+}
+
+img.nop{
+    margin-top: 5rem;
+}
+
+.error-message{
+    color: darkred;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+    margin-top: -2rem;
+}
+
+.btn-danger {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #dc3545;
+    --bs-btn-border-color: #dc3545;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #bb2d3b;
+    --bs-btn-hover-border-color: #b02a37;
+    --bs-btn-focus-shadow-rgb: 225, 83, 97;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #b02a37;
+    --bs-btn-active-border-color: #a52834;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #dc3545;
+    --bs-btn-disabled-border-color: #dc3545;
+    margin-top: 1.5rem;
+}
+
+.card-body-error {
+    background-color: rgba(0, 0, 0, 0.61);
+    border-radius: 2rem;
+    width: 70rem;
+    height: 48rem;
+    margin-left: -15rem;
 }

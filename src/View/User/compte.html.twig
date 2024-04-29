@@ -1,0 +1,79 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}<link rel="stylesheet" href="/assets/css/login.css">
+{% endblock %}
+
+{% block content %}
+	<form method="post">
+		<section class="vh-80 gradient-custom">
+			<div class="container py-5 h-100">
+				<div class="row d-flex justify-content-center align-items-center h-50">
+					<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+						<div class="card bg-dark">
+							<div class="card-body p-5 text-center">
+								<div class="mb-md-5 mt-md-4 pb-5">
+									<h2 class="fw-bold mb-2 text-uppercase">Compte</h2>
+									<div class="row">
+										<div class="col-6">
+											<div class="mb-3">
+												<label for="texte" class="form-label">Prénom</label>
+												<input type="texte" class="form-control" name="firstname" id="texte" value="{{user.firstname}}">
+											</div>
+										</div>
+										<div class="col-6">
+											<div class="mb-3">
+												<label for="texte" class="form-label">Nom</label>
+												<input type="texte" class="form-control" name="lastname" id="texte" value="{{user.lastname}}">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputPassword6">Mot de passe</label>
+										<input type="password" id="inputPassword6" name="password" class="form-control mx-sm-0" aria-describedby="passwordHelpInline" value="{{user.password}}">
+										<small id="passwordHelpInline" class="text-muted"></small>
+									</div>
+									<div class="form-group">
+										<label for="email">Email</label>
+										<input type="email" id="email" name="email" class="form-control mx-sm-0" aria-describedby="passwordHelpInline" value="{{user.email}}">
+									</div>
+									<div class="form-group">
+										<label for="texte">Adresse</label>
+										<input type="texte" id="texte" name="address" class="form-control mx-sm-0" aria-describedby="passwordHelpInline" value="{{user.address}}">
+									</div>
+									<div class="form-group">
+										<label for="texte">Adresse bis</label>
+										<input type="texte" id="address2" name="address2" class="form-control mx-sm-0" aria-describedby="passwordHelpInline" value="{{user.address2}}">
+									</div>
+									<div class="row">
+										<div class="col-6">
+											<div class="mb-3">
+												<label for="texte" class="form-label">Code postal</label>
+												<input type="texte" class="form-control" name="zip_code" id="texte" value="{{user.zip_code}}">
+											</div>
+										</div>
+										<div class="col-6">
+											<div class="mb-3">
+												<label for="texte" class="form-label">Pays</label>
+												<input type="texte" class="form-control" name="pays" id="texte" value="{{user.pays}}">
+											</div>
+										</div>
+									</div>
+									<div class="col-6">
+										<div class="mb-5">
+											<label for="texte" class="form-label">Téléphone</label>
+											<input type="texte" class="form-control" name="phone" id="texte" value="{{user.phone}}">
+										</div>
+									</div>
+									<button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-2" type="submit">Modifier les informattions</button>
+									<a href="/compte/delete?id={{user.id}}">
+										<button type="button" class="btn btn-danger">Supprimer le compte</button>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</form>{% endblock %}

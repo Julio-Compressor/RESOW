@@ -1,49 +1,61 @@
-.FormContact {
-    background-color: #0000009e;
+
+body{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-left: 30rem;
-    margin-right: 30rem;
-    border-radius: 20px;
+    justify-content: space-between;
 }
 
-.formulaire {
+
+.card-body{
+background-color: rgba(0, 0, 0, 0.61);
+border-radius: 2rem;
+width: 40rem;
+height: 48rem;
+margin-left: -5rem;
+}
+
+/* html { overflow-y: hidden; }  */
+
+html {
+    overflow-y: hidden;
+}
+
+.bg-dark {
+    --bs-bg-opacity: 0;
+    color: white;
+    border-radius: 1rem;
+}
+
+.text-uppercase {
+    text-transform: uppercase !important;
+    text-align: center;
+}
+
+.text-white-50 {
+    --bs-text-opacity: 1;
+    color: rgba(255, 255, 255, .5) !important;
+    text-align: center;
+}
+
+.form-label {
+    margin-bottom: .5rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 
-.Titrecontact {
+
+.error-message{
+    color: darkred;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+    margin-top: -2rem;
+}
+
+.fw-bold{
     color: var(--jaune);
-}
-
-.formulaire input {
-    background-color: white;
-    border-radius: 20px;
-}
-
-.particulier {
-    width : 10px;
-    height: 10px;
-}
-.professionnel {
-    width: 10px;
-    height: 10px;
-}
-
-.message {
-    padding: 30px;
-}
-.ContactBouton {
-    padding: 10px;
-    margin: 30px;
-}
-
-.ContactMessage {
-    height: 300px;
-    width: 400px;
-    border-radius: 20px;
+    font-size: 1.5rem;
 }
 
 .statut {
@@ -51,6 +63,37 @@
     flex-direction: row;
     align-items:center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 15px;
     gap: 1rem;
+    margin-right: 3.8rem;
+}
+
+@media (min-width: 576px) {
+    .mx-sm-0 {
+        margin-right: 1rem !important;
+        margin-left: 10rem !important;
+        width: 14rem;
+        border-radius: 3rem;
+    }
+}
+
+.ContactMessage {
+    height: 300px;
+    width: 400px;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.message {
+    padding: 30px;
+}
+
+legend {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: flex-end;
 }

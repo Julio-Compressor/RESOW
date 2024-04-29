@@ -1,5 +1,5 @@
 footer {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.514);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -34,6 +34,9 @@ footer {
 .footer .ul li a {
     text-decoration: none;
     color: var(--jaune);
+    margin-top: -2rem;
+    font-family: var(--nav-font) ;
+    margin-right: -1rem;
 }
 
 span {
@@ -45,21 +48,7 @@ span {
 .liens_reseau {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
-}
-
-.bi.bi-facebook {
-    color: var(--bleu);
-}
-
-.bi.bi-spotify {
-    color: var(--vert);
-}
-
-.bi.bi-instagram {
-    color: pink;
-}
-
-.bi.bi-music-note-beamed {
-    color: #F54E66;
+    gap: 0.7rem;
+    margin-top: 1.5rem;
+    margin-left: -4rem;
 }

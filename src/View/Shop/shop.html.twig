@@ -9,6 +9,7 @@
 
 {% block content %}
 	<section class="article-shop">
+	<p class="title-shop">Bienvenue dans le Shop</p>
 		<div class="row">
 			{% for article in articles %}
 				<form method="post" class="col-sm-4 mb-3 mb-sm-0" action="shop/add" data-article-id="{{article.nameCat}}">

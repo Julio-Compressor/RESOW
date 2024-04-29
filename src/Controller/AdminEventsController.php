@@ -9,6 +9,11 @@ class AdminEventsController extends AbstractController
 {
     public function index(): string
     {
+        if (!$this->user || !$_SESSION['is_admin']) {
+            echo 'Accès non autorisé';
+            header('Location: /error');
+        }
+
         $events = new IndexManager();
         $events = $events->selectAll();
 
@@ -40,6 +45,21 @@ class AdminEventsController extends AbstractController
             $eventsManager->delete((int)$id);
 
             header('location: /admin/events');
+        }
+    }
+    public function add()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // clean $_POST data
+            $newEvent = array_map('trim', $_POST);
+            $newEvent['city'] = mb_strtoupper($newEvent['city']);
+            if (!isset($newEvent['isSoldout'])) {
+                $newEvent['isSoldout'] = false;
+            }
+            $eventsManager = new IndexManager();
+            $eventsManager->addEvent($newEvent);
+            header('location: /admin/events');
+            return null;
         }
     }
 }

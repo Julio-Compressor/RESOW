@@ -1,4 +1,5 @@
--- Active: 1713169810273@@127.0.0.1@3306@straszik
+-- Active: 1713169372026@@127.0.0.1@3306@straszik
+
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
@@ -61,7 +62,7 @@ CREATE TABLE `form` (
 );
 
 CREATE TABLE `article` (
-    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `name` VARCHAR(250) NOT NULL, `price` FLOAT NOT NULL, `description` TEXT NULL, category_id INT NOT NULL REFERENCES `category_article` (id), `img_name` VARCHAR(250) NOT NULL
+    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `name` VARCHAR(250) NOT NULL, `price` FLOAT NOT NULL, `description` TEXT NULL, `category_id` INT NOT NULL REFERENCES `category_article` (id), `img_name` VARCHAR(250) NOT NULL
 );
 
 -- DROP TABLE article;
@@ -108,28 +109,32 @@ VALUES ('tshirt_homme'),
 -- DROP TABLE `user`;
 
 CREATE TABLE `user` (
-    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `firstname` VARCHAR(50) NOT NULL, `lastname` VARCHAR(50) NOT NULL, `password` VARCHAR(255) NOT NULL, `email` VARCHAR(100) NOT NULL, `address` VARCHAR(255) NULL, `address2` VARCHAR(255) NULL, `zip_code` INT NULL, `pays` VARCHAR(60) NULL, `phone` INT NULL, `
-is_newsletter` BOOL NULL, `is_admin` BOOL NULL
+    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `firstname` VARCHAR(50) NOT NULL, `lastname` VARCHAR(50) NOT NULL, `password` VARCHAR(255) NOT NULL, `email` VARCHAR(100) NOT NULL, `address` VARCHAR(255) NULL, `address2` VARCHAR(255) NULL, `zip_code` INT NULL, `pays` VARCHAR(60) NULL, `phone` INT NULL, `is_newsletter` BOOL NULL, `is_admin` BOOL NULL
 );
 
 -- contenu de la table user --
 INSERT INTO
     `user` (
-        `firstname`, `lastname`, `password`, `email`
+        `firstname`, `lastname`, `password`, `email`, `address`, `address2`, `zip_code`, `pays`, `phone`, `is_admin`
     )
 VALUES (
-        'Admin', 'Niko', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@niko.fr'
+        'Admin', 'Niko', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@niko.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67000, 'France', 0625674698, 1
     ),
     (
-        'Admin', 'Julien', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@julien.fr'
+        'Admin', 'Julien', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@julien.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67000, 'France', 0625674698, 1
     ),
     (
-        'Admin', 'Matthieu', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@matthieu.fr'
+        'Admin', 'Matthieu', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@matthieu.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67000, 'France', 0625674698, 1
     ),
     (
-        'Admin', 'Anae', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@anae.fr'
+        'Admin', 'Anae', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@anae.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67000, 'France', 0625674698, 1
+    ),
+    (
+        'User', 'Vincent', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'user@vincent.fr', '20 eme arrondissement de paris', '45 avenue de la Wild Code School', 75000, 'France', 0655674792, 0
     );
 
+
+    
 CREATE TABLE `item` (
     `id` int(11) UNSIGNED NOT NULL, `title` varchar(255) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;

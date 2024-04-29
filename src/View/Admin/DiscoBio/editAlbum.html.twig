@@ -1,0 +1,33 @@
+{% extends 'layoutAdmin.html.twig' %}
+
+{% block content %}
+<main>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">title</th>
+                <th scope="col">type</th>
+                <th scope="col">nb_track</th>
+                <th scope="col">price</th>
+                <th scope="col">date</th>
+                <th scope="col">description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <form method="post" action="update?id={{album.id}}" >
+                    <td><input type="text" name="title" value="{{ album.title }}"></td>
+                    <td><input type="text" name="type" value="{{ album.type }}"></td>
+                    <td><input type="number" name="nb_track" value="{{ album.nb_track }}"></td>
+                    <td><input type="number" name="price" value="{{ album.price }}"></td>
+                    <td><input type="text" name="date" value="{{ album.date }}"></td>
+                    <td><input type="text" name="description" value="{{ album.description }}">
+                        <input type="hidden" name="id" value="{{ album.id }}">
+                    </td>
+                    <td><button class="btn btn-primary" type="submit">Update</button></td>                    
+                </form>
+            </tr>
+        <tbody>
+    </table>
+</main>
+{% endblock %}
