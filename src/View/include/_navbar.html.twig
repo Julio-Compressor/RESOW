@@ -5,6 +5,8 @@
                 <img src="/assets/images/logo_header.png">
             </div>
             <div class="uk-navbar-center">
+                <label class="uk-navbar-center menu-burger" for="toggle">☰</label>
+                <input type="checkbox" id="toggle">
                 <ul class="uk-navbar-nav link">
                     <li><a href="/" class="home_nav">Home</a></li>
                     <li><a href="/discoBio" class="discobio_nav">DiscoBio</a></li>
@@ -14,26 +16,28 @@
             </div>
             <div class="uk-navbar-right"> 
                 <ul class="uk-navbar-nav">
+                    <li><a href="/cart">panier</a></li>
                     {% if user %}
                     {% if user['is_admin'] == true %}
                     <li><img src="\assets\images\staff.png" class="staff-logo"/></li>
                     {% endif %}
-                <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                {{user.lastname}}</button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="/compte"><img src="\assets\images\compte.png " class="deconnexion-button"/> Mon compte</a></li>
-                    {% if user['is_admin'] == true %}
-                    <li><a class="dropdown-item" href="/admin"/><img src="\assets\images\admin.png" class="deconnexion-button"/> Admin</a></li>
-                    {% endif %}
-                    <li><a class="dropdown-item" href="/logout"><img src="\assets\images\logout.png" class="deconnexion-button"/> Deconnexion</a></li>
-                </ul>
-            </div>
+                    <li>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{user.lastname}}</button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="/compte"><img src="\assets\images\compte.png " class="deconnexion-button"/> Mon compte</a></li>
+                                {% if user['is_admin'] == true %}
+                                <li><a class="dropdown-item" href="/admin"/><img src="\assets\images\admin.png" class="deconnexion-button"/> Admin</a></li>
+                                {% endif %}
+                                <li><a class="dropdown-item" href="/logout"><img src="\assets\images\logout.png" class="deconnexion-button"/> Deconnexion</a></li>
+                            </ul>
+                        </div>
+                    </li>
                     {% else %}
                     <li><a href="/login">Connexion</a></li>
                     <li><a href="/register">S'enregistrer</a></li>
                     {% endif %}
-                    <li><a href="/cart">panier</a></li>
                 </ul>
             </div>
         </div>

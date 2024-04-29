@@ -32,7 +32,7 @@ body{
 }
 
 .disco {
-    width: 1200px;
+    max-width: 1200px;
     margin:auto;
 
 }
@@ -51,8 +51,9 @@ body{
     margin-bottom: 4rem;
 
 }
-img.card-img-top{
-    max-height: 187px;
+img.card-img-top {
+    width: auto;
+    height: 100%;
 }
 a.btn.btn-primary{
     background-color: var(--bleu);
@@ -64,4 +65,29 @@ a.btn.btn-primary{
 }
 p.card-text {
     margin-bottom: 0.25rem;
+}
+.col-sm-4.mb-3.mb-sm-0 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+img.card-img-top {
+    width: auto;
+    height: 100%;
+}
+.cardDisco-img {
+    max-height: 187px;
+}
+
+
+@media screen and (max-width:900px) {
+    .bio h1 {
+        margin-top: 4rem;
+    }
+    .bio p {
+        text-align: center;
+        width: 90vw;
+        margin: auto;
+    }
+
 }

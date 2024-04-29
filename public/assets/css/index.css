@@ -99,10 +99,10 @@ main {
 }
 
 .events {
-    width: 35vw;
+    width: 80vw;
     overflow: auto;
     scrollbar-width: none;
-    height: 27vh;
+    height: 25vh;
 }
 
 .events::-webkit-scrollbar {
@@ -118,7 +118,6 @@ main {
 }
 
 .events ul li {
-    min-width: 400px;
     width: max-content;
     text-align: center;
 }
@@ -145,10 +144,37 @@ main {
 
 }
 
-.tampon {}
+
+
+.uk-navbar-center:not(:only-child) {
+    transform: translate(-50%, -50%);
+}
+label.uk-navbar-center.menu-burger,
+#toggle {
+    display: none;
+}
 
 @media (hover:hover) {
     .scaling:hover {
         transform: scale(1.1);
+    }
+@media screen and (max-width:700px) {
+        .events {
+            width: 100%;
+        }
+        .events ul li {
+            min-width: none;
+        }
+        main h1 {
+            font-size: 1.75rem;
+        }
+        .uk-navbar-center:not(:only-child) {
+            transform: translate(-50%, -50%);
+        }
+        .uk-navbar-center.menu-burger label {
+            height: 83vh;
+            
+        }
+
     }
 }

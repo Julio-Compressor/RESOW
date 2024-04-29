@@ -21,9 +21,11 @@
             <section class="disco">
                 <div class="row">
                     {% for album in albums %}
-                        <div class="col-sm-4 mb-3 mb-sm-0">
+                        <div class="col-sm-4 col-xs-6 mb-3 mb-sm-0">
                             <div class="card text-center">
-                                    <img src="..\assets\images\album\vinyl_{{album.id}}.png" class="card-img-top" alt="...">
+                                <div class="cardDisco-img">
+                                    <img src="..\assets\images\album\vinyl_{{album.id}}.png" class="card-img-top" alt="{{album.title}} {{album.type}}">
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title">{{album.title}} {{album.type}}</h5>
                                     <p class="card-text">{{album.description}}</p>
