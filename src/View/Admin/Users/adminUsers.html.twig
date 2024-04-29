@@ -13,8 +13,6 @@
                     <td>{{ user.firstname }} | {{ user.lastname }} | {{ user.email }} | {{ user.adress }} | {{ user.adress2 }} 
                     | {{ user.zip_code }} | {{ user.pays }} | {{ user.phone }} | Newsletter : {{ user.is_newsletter }}  | Admin : {{ user.is_admin }}</td>
                     <td><a href="/admin/users/delete?id={{user.id}}">Delete</a></td>
-                </tr>
-                <tr>
                     <td>        
                         <form action="users/update?id={{user.id}}" method="post">
                             <label>Firstname :</label><input name="firstname" id="firstname" type="text" />
