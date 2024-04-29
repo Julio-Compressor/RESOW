@@ -77,3 +77,11 @@ img.nop{
     --bs-btn-disabled-border-color: #dc3545;
     margin-top: 1.5rem;
 }
+
+.card-body-error {
+    background-color: rgba(0, 0, 0, 0.61);
+    border-radius: 2rem;
+    width: 70rem;
+    height: 48rem;
+    margin-left: -15rem;
+}

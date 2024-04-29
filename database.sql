@@ -128,8 +128,13 @@ VALUES (
     ),
     (
         'Admin', 'Anae', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@anae.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67000, 'France', 0625674698, 1
+    ),
+    (
+        'User', 'Vincent', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'user@vincent.fr', '20 eme arrondissement de paris', '45 avenue de la Wild Code School', 75000, 'France', 0655674792, 0
     );
 
+
+    
 CREATE TABLE `item` (
     `id` int(11) UNSIGNED NOT NULL, `title` varchar(255) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
