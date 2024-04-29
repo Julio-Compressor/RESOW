@@ -144,16 +144,15 @@ main {
 
 }
 
-.tampon {}
+
 
 .uk-navbar-center:not(:only-child) {
     transform: translate(-50%, -50%);
 }
-/* label.uk-navbar-center.menu-burger,
+label.uk-navbar-center.menu-burger,
 #toggle {
     display: none;
-} */
-
+}
 
 @media (hover:hover) {
     .scaling:hover {
