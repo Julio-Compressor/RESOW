@@ -5,7 +5,7 @@
 {% block content %}
 <section>
     <div class="modify-event">
-        <h1>Modifier un évenement</h1>
+        <h3>Modifier un évenement</h3>
             <table class="table table-dark table-striped">
                 <tbody>
                 {% for event in events %}
@@ -26,7 +26,7 @@
             </table>
     </div>
     <div class="add-event">
-        <h1>Ajouter un évenement</h1>
+        <h3>Ajouter un évenement</h3>
             <form method="post" action="events/add">
                 <div class="mb-3">
                     <label for="city" class="form-label">Ville</label>

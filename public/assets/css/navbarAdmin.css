@@ -5,13 +5,39 @@ header {
     justify-content: center;
     gap: 2rem;
     width: 20vw;
-    background-color: rgb(20, 20, 20);
+    background-color: rgba(20, 20, 20, 0.504);
     height: 100vh;
 }
 
 .bg-body-tertiary {
-    --bs-bg-opacity: 1;
+    --bs-bg-opacity: 0;
     width: 200px;
-    border: solid grey;
-    border-radius: 5px;
+}
+
+.navbar-brand {
+    font-family: var(--nav-font);
+}
+
+.navbar-brand.events {
+    color: var(--vert);
+}
+
+.navbar-brand.discoBio {
+    color: var(--rose);
+}
+
+.navbar-brand.shop {
+    color: var(--bleu);
+}
+
+.navbar-brand.users {
+    color: crimson;
+}
+
+.navbar-brand.navbar-brand.contact {
+    color: var(--jaune);
+}
+
+.navbar-brand.return {
+    color: var(--white);
 }
