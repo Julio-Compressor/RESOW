@@ -4,41 +4,29 @@
 
 {% block content %}
 <section>
-<div class="modify-user">
-    <h1>Modifier un utilisateur</h1>
-        <table class="table table-dark table-striped">
-            <tbody>
-            {% for user in users %}
-                <tr>
-                    <td>{{ user.firstname }} | {{ user.lastname }} | {{ user.email }} | {{ user.adress }} | {{ user.adress2 }} 
-                    | {{ user.zip_code }} | {{ user.pays }} | {{ user.phone }} | Newsletter : {{ user.is_newsletter }}  | Admin : {{ user.is_admin }}</td>
-                    <td><a href="/admin/users/delete?id={{user.id}}">Delete</a></td>
-                    <td>        
-                        <form action="users/update?id={{user.id}}" method="post">
-                            <label>Firstname :</label><input name="firstname" id="firstname" type="text" />
-                            <label>Lastname :</label><input name="lastname" id="lastname" type="text" />
-                            <label>E-mail :</label><input name="email" id="email" type="text" />
-                            <label>Adress :</label><input name="address" id="address" type="text" />
-                            <label>Adress2 :</label><input name="address2" id="address2" type="text" />
-                            <label>Zip Code :</label><input name="zip_code" id="zip_code" type="text" />
-                            <label>Pays :</label><input name="pays" id="pays" type="text" />
-                            <label>Phone Number :</label><input name="phone" id="phone" type="text" />
-                    
-                            <input class="form-check-input" type="checkbox" name="is_newsletter" value=true id="is_newsletter">
-                            <label class="form-check-label" for="is_newsletter">Newsletter</label>
-                            <input class="form-check-input" type="checkbox" name="is_admin" value=true id="is_admin">
-                            <label class="form-check-label" for="is_admin">Admin</label>
-                            <input type="hidden" name="id" value="{{event.id}}">
-                            <button type="submit" class="btn btn-primary">UPDATE</button>
-                        </form>
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-</div>
-<div class="add-user">
-        <h1>Ajouter un utilisateur</h1>
+    <div class="modify-user">
+        <h1>Edition des utilisateurs</h1>
+            <table class="table table-dark table-striped">
+                <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.firstname }} | {{ user.lastname }} | {{ user.email }} | Admin : {{ user.is_admin }}</td>
+                        <td><a href="/admin/users/delete?id={{user.id}}">Delete</a></td>
+                        <td>        
+                            <form action="users/update?id={{user.id}}" method="post">
+                                <input class="form-check-input" type="checkbox" name="is_admin" value=true id="is_admin">
+                                <label class="form-check-label" for="is_admin">Admin</label>
+                                <input type="hidden" name="id" value="{{user.id}}">
+                                <button type="submit" class="btn btn-primary">UPDATE</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+    </div>
+    <div class="add-user">
+        <h1>Ajouter un Administrateur</h1>
             <form method="post" action="users/add">
                 <div class="mb-3">
                     <label for="firstname" class="form-label">Firstname :</label>
@@ -55,30 +43,6 @@
                 <div class="mb-3">
                     <label for="email" class="form-label">E-mail :</label>
                     <input type="text" name="email" class="form-control" id="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="address" class="form-label">Adress :</label>
-                    <input type="text" name="address" class="form-control" id="adress" >
-                </div>
-                <div class="mb-3">
-                    <label for="address2" class="form-label">Adress2 :</label>
-                    <input type="text" name="address2" class="form-control" id="adress2" >
-                </div>
-                <div class="mb-3">
-                    <label for="zip_code" class="form-label">Zip Code :</label>
-                    <input type="text" name="zip_code" class="form-control" id="zip_code" >
-                </div>
-                <div class="mb-3">
-                    <label for="pays" class="form-label">Pays :</label>
-                    <input type="text" name="pays" class="form-control" id="pays" >
-                </div>
-                <div class="mb-3">
-                    <label for="phone" class="form-label">Phone Number :</label>
-                    <input type="text" name="phone" class="form-control" id="phone" >
-                </div>
-                <div class="mb-3">
-                    <input class="form-check-input" type="checkbox" name="is_newsletter" value=true id="is_newsletter">
-                    <label class="form-label" for="is_newsletter">Newsletter : </label>
                 </div>
                 <div class="mb-3">
                     <input class="form-check-input" type="checkbox" name="is_admin" value=true id="is_admin">

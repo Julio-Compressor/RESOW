@@ -54,6 +54,10 @@ section {
     margin-bottom: 1rem;
 }
 
+.add-user {
+    width: 50rem;
+}
+
 [type="submit"]:not(:disabled),
 button:not(:disabled) {
     margin-left: 1rem;
