@@ -11,6 +11,7 @@
                 {% for event in events %}
                     <tr>
                         <td>{{ event.city }} | {{ event.place }} | {{ event.date }} | Soldout:{{ event.isSoldout }}</td>
+                        <td>{{event.ticket_link}}</td>
                         <td><a href="/admin/events/delete?id={{event.id}}">Delete</a></td>
                         <td>        
                             <form action="events/update?id={{event.id}}" method="post">
@@ -35,6 +36,10 @@
                 <div class="mb-3">
                     <label for="place" class="form-label">Nom de la Salle</label>
                     <input type="text" name="place" class="form-control" id="place" required>
+                </div>
+                <div class="mb-3">
+                    <label for="link" class="form-label">Nom de la Salle</label>
+                    <input type="text" name="ticket_link" class="form-control" placeholder="HTTP://" id="link" >
                 </div>
                 <div class="mb-3">
                     <label for="date" class="form-label">Date</label>
