@@ -60,3 +60,14 @@ td a.btn.btn-primary {
     box-shadow: inset 0px 0px 3px 0px black;
     background-color: #c04242;
 }
+@media screen and (max-width:900px) {
+    th h3 {
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width:450px){
+    td.col1 {
+        display: none;
+    }
+    
+}
