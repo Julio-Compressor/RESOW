@@ -51,25 +51,4 @@ class AdminUsersController extends AbstractController
             header('location: /admin/users');
         }
     }
-
-    public function add()
-    {
-        $users = new AdminManager();
-        $users = $users->selectAll();
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // clean $_POST data
-            $newUser = array_map('trim', $_POST);
-            if (!isset($users['is_admin'])) {
-                $users['is_admin'] = 0;
-            }
-            if (!isset($users['is_newsletter'])) {
-                $users['is_newsletter'] = 0;
-            }
-            $usersManager = new AdminManager();
-            $usersManager->add($newUser);
-            header('location: /admin/users');
-            return null;
-        }
-    }
 }

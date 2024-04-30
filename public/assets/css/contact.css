@@ -10,14 +10,13 @@ body{
 background-color: rgba(0, 0, 0, 0.61);
 border-radius: 2rem;
 width: 40rem;
-height: 48rem;
+height: 46rem;
 margin-left: -5rem;
 }
 
-/* html { overflow-y: hidden; }  */
-
 html {
-    overflow-y: hidden;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
 }
 
 .bg-dark {
@@ -56,6 +55,7 @@ html {
 .fw-bold{
     color: var(--jaune);
     font-size: 1.5rem;
+    margin-top:-3.5rem;
 }
 
 .statut {

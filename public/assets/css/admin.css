@@ -3,12 +3,31 @@ body {
     flex-direction: row;
     background-color: #333;
     height: 100vh;
+    background-image: url(../images/home_background.jpg);
+    background-blend-mode: overlay;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -50;
+}
+
+h1,
+h2,
+{
+font-family: var(--title-font);
+}
+
+h3 {
+    font-family: var(--primary-font);
+    color: var(--white);
+    font-size: 24px;
+    margin: 1rem;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    align-items: center;
     height: 100vh;
     width: 80vw;
     overflow: auto;
@@ -28,7 +47,11 @@ h1 {
     color: white;
     padding-top: 1rem;
     margin-bottom: 2rem;
-    font-size: 2rem;
+    font-size: 3rem;
+}
+
+section {
+    margin-left: 2rem;
 }
 
 .modify-event {
@@ -48,10 +71,22 @@ h1 {
 
 .add-event {
     width: 40vw;
-    margin: 0 auto 1rem;
+    margin-bottom: 1rem;
+}
+
+.add-user {
+    width: 50rem;
 }
 
 [type="submit"]:not(:disabled),
 button:not(:disabled) {
     margin-left: 1rem;
+}
+
+.row.g-3 {
+    margin-top: 1rem;
+}
+
+.add-article {
+    margin-bottom: 1rem;
 }

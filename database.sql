@@ -1,4 +1,4 @@
--- Active: 1713169372026@@127.0.0.1@3306@straszik
+-- Active: 1711385285915@@127.0.0.1@3306@straszik
 
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1deb2ubuntu2
@@ -109,7 +109,7 @@ VALUES ('tshirt_homme'),
 -- DROP TABLE `user`;
 
 CREATE TABLE `user` (
-    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `firstname` VARCHAR(50) NOT NULL, `lastname` VARCHAR(50) NOT NULL, `password` VARCHAR(255) NOT NULL, `email` VARCHAR(100) NOT NULL, `address` VARCHAR(255) NULL, `address2` VARCHAR(255) NULL, `zip_code` INT NULL, `pays` VARCHAR(60) NULL, `phone` INT NULL, `is_newsletter` BOOL NULL, `is_admin` BOOL NULL
+    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `firstname` VARCHAR(50) NOT NULL, `lastname` VARCHAR(50) NOT NULL, `password` VARCHAR(255) NOT NULL, `email` VARCHAR(100) NOT NULL, `address` VARCHAR(255) NULL, `address2` VARCHAR(255) NULL, `zip_code` INT NULL, `pays` VARCHAR(60) NULL, `phone` VARCHAR(15) NULL, `is_newsletter` BOOL NULL, `is_admin` BOOL NULL
 );
 
 -- contenu de la table user --
@@ -118,23 +118,24 @@ INSERT INTO
         `firstname`, `lastname`, `password`, `email`, `address`, `address2`, `zip_code`, `pays`, `phone`, `is_admin`
     )
 VALUES (
-        'Admin', 'Niko', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@niko.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67000, 'France', 0625674698, 1
+        'Admin', 'Niko', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@niko.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 37510, 'France', '0625674698', 1
     ),
     (
-        'Admin', 'Julien', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@julien.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67000, 'France', 0625674698, 1
+        'Admin', 'Julien', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@julien.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 27220, 'France', '0625674698', 1
     ),
     (
-        'Admin', 'Matthieu', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@matthieu.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67000, 'France', 0625674698, 1
+        'Admin', 'Matthieu', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@matthieu.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67117, 'France', '0625674698', 1
     ),
     (
-        'Admin', 'Anae', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@anae.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 67000, 'France', 0625674698, 1
+        'Admin', 'Anae', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'admin@anae.fr', '255 rue j\'en peux plus de Grump', '5 avenue de la Wild Code School', 44000, 'France', '0625674698', 1
     ),
     (
-        'User', 'Vincent', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'user@vincent.fr', '20 eme arrondissement de paris', '45 avenue de la Wild Code School', 75000, 'France', 0655674792, 0
+        'User', 'Vincent', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'user@vincent.fr', '20 eme arrondissement de paris', '45 avenue de la Wild Code School', 75000, 'France', '0655674792', 0
+    ),
+    (
+        'User', 'Yavouz', '$2y$10$vE9qkXOsLHJQpYbTpkylvuJYaaX1xEOF0LHcr26gvFj0CzOceEe0m', 'user@yavouz.fr', 'Boulevard du President Wilson, ', '45 avenue de Wild Code School', 67000, 'France', '0655674792', 0
     );
 
-
-    
 CREATE TABLE `item` (
     `id` int(11) UNSIGNED NOT NULL, `title` varchar(255) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
@@ -171,41 +172,42 @@ MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 3;
 -- Structure de la table `onTour`
 --
 CREATE TABLE `events` (
-    `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL, `city` VARCHAR(100) NOT NULL, `place` VARCHAR(100) NOT NULL, `date` VARCHAR(100) NOT NULL, `isSoldout` BOOL NOT NULL
+    `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL, `city` VARCHAR(100) NOT NULL, `place` VARCHAR(100) NOT NULL, `date` VARCHAR(100) NOT NULL, `isSoldout` BOOL NOT NULL, `ticket_link` VARCHAR(500) NULL
 );
 
 -- TRUNCATE TABLE `events`;
+-- DROP Table events;
 
 INSERT INTO
     `events` (
-        `city`, `place`, `date`, `isSoldout`
+        `city`, `place`, `date`, `isSoldout`, `ticket_link`
     )
 VALUES (
-        'EVREUX', 'Le Kubb', '2024-04-27', false
+        'EVREUX', 'Le Kubb', '2024-04-27', false, 'https://billetterie.epcc-ele.com/spectacle?id_spectacle=1617&lng=1'
     ),
     (
-        'LILLE', 'Le Bidule', '2024-07-25', true
+        'LILLE', 'Le Bidule', '2024-07-25', true, 'https://www.facebook.com/Bidule59/?locale=fr_FR'
     ),
     (
-        'PARIS', 'La Maroquinerie', '2024-05-18', false
+        'PARIS', 'La Maroquinerie', '2024-05-18', false, 'https://www.fnacspectacles.com/event/hurray-for-the-riff-raff-la-maroquinerie-paris-20-17839897/'
     ),
     (
-        'STRASBOURG', 'La Laiterie', '2024-06-08', false
+        'STRASBOURG', 'La Laiterie', '2024-06-08', false, NULL
     ),
     (
-        'LYON', 'Le Farmer', '2024-08-17', false
+        'LYON', 'Le Farmer', '2024-08-17', false, NULL
     ),
     (
-        'MARSEILLE', 'La Magalone', '2024-08-31', false
+        'MARSEILLE', 'La Magalone', '2024-08-31', false, NULL
     ),
     (
-        'NICE', 'Palais Nkaïa', '2024-09-07', false
+        'NICE', 'Palais Nkaïa', '2024-09-07', false, NULL
     ),
     (
-        'BORDEAUX', 'Arkea Arena', '2024-09-21', true
+        'BORDEAUX', 'Arkea Arena', '2024-09-21', true, NULL
     ),
     (
-        'NANTES', 'Warehouse', '2024-10-05', false
+        'NANTES', 'Warehouse', '2024-10-05', false, NULL
     );
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */

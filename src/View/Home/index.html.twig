@@ -15,7 +15,7 @@
             <div class="events">
                 {% for event in events %}
                     <ul>
-                        <li class="scaling"><div class="soldout"><img class="tampon" src="{% if event['isSoldout'] == true %} ../assets/images/soldout.png {% endif %}" alt="" ></div><a href="#">{{ event.city ~ " - " ~ event.place ~ " - " ~ event.date }}</a></li>
+                        <li class="scaling"><div class="soldout"><img class="tampon" src="{% if event['isSoldout'] == true %} ../assets/images/soldout.png {% endif %}" alt="" ></div><a href="{{event.ticket_link}}" target="_blank" >{{ event.city ~ " - " ~ event.place ~ " - " ~ event.date }}</a></li>
                     </ul>
                 {% endfor %}
             </div>

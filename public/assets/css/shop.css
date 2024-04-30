@@ -17,7 +17,7 @@
     flex-direction: column;
 }
 .card-img-top {
-    max-height: 186px;
+    max-height: 325px;
     
 }
 .card-img-top img {
@@ -29,7 +29,7 @@
 }
 .article-shop form.col-sm-4.mb-3.mb-sm-0 {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 li.list-group-item {
     background: transparent;
@@ -112,4 +112,30 @@ li.list-group-item label.btn.btn-secondary {
     font-family: var(--title-font);
     color: var(--bleu);
     font-size: 2rem;
+}
+label.btn.btn-outline-primary {
+    color: var(--bleu);
+    border-color: var(--bleu);
+    --bs-btn-active-bg: var(--bleu);
+    --bs-btn-active-border-color: var(--bleu);
+    --bs-btn-active-color: black;
+    --bs-btn-hover-bg: var(--bleu);
+    --bs-btn-hover-border-color: var(--bleu);
+    --bs-btn-border-color: var(--bleu);
+    --bs-btn-color: var(--bleu);
+    
+}
+button.btn.btn-primary {
+    color: black;
+    background-color: var(--bleu);
+    border-color: var(--bleu);
+}
+
+
+@media screen and (max-width:900px) {
+    .title-shop {
+    margin-top: 4rem;
+    width: 80%;
+    text-align: center;
+    }
 }
