@@ -1,3 +1,32 @@
+lien de déploiment : https://0224-php-p2-straszik.strasbourg-1.wilders.dev/ du projet 2 
+
+---------IMPORTANT-----------
+
+Le lien de deploiement ci-dessus est l'etat du projet pour la formation soit 2.5 semaine de travail. 
+
+Ce repo est un travail personnel pour continuer de developper le projet afin d'abouttir un quelque chose d'un peu plus fini. 
+
+pour accéder au site il ne peut être qu'accessible qu'en local donc il vous faut :
+
+- PHP installer sur votre machine
+- mySQL
+- cloner le repos
+- dans la console: composer install
+- copier le  db.php.dist dans le dossier config
+- le renommer en db.php
+- dans le fichier db.php :
+
+define('APP_DB_USER', 'user');  //remplacer 'user' par votre user de mySQL
+define('APP_DB_PASSWORD', 'password'); //remplacer 'password' par votre password de mySQL
+define('APP_DB_HOST', 'localhost'); //changé rien
+define('APP_DB_NAME', 'database_name'); //remplacer 'database_name' par un nom de database que vous souhaitez
+
+- dans la console : php migration.php
+- dans la console : php -S localhost:8000 -t public
+
+ENJOY ! 
+
+
 # Simple MVC
 
 ## For Windows Users
