@@ -17,10 +17,10 @@ pour accéder aux ameliorations du site il ne peut être qu'accessible qu'en loc
 - dans le fichier db.php :
   
 ```php
-    define('APP_DB_USER', 'user');  remplacer 'user' par votre user de mySQL"
-    define('APP_DB_PASSWORD', 'password'); remplacer 'password' par votre password de mySQL"
-    define('APP_DB_HOST', 'localhost'); changer rien"
-    define('APP_DB_NAME', 'database_name'); remplacer 'database_name' par un nom de database que vous souhaitez"
+    define('APP_DB_USER', 'user');  remplacer 'user' par votre user de mySQL
+    define('APP_DB_PASSWORD', 'password'); remplacer 'password' par votre password de mySQL
+    define('APP_DB_HOST', 'localhost'); changer rien
+    define('APP_DB_NAME', 'database_name'); remplacer 'database_name' par un nom de database que vous souhaitez
 ```
 
 - dans la console : php migration.php
