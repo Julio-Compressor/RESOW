@@ -6,7 +6,7 @@ Le lien de deploiement ci-dessus est l'etat du projet pour la formation soit 2.5
 
 Ce repo est un travail personnel pour continuer de developper le projet afin d'abouttir un quelque chose d'un peu plus fini. 
 
-pour accéder au site il ne peut être qu'accessible qu'en local donc il vous faut :
+pour accéder aux ameliorations du site il ne peut être qu'accessible qu'en local donc il faut :
 
 - PHP installer sur votre machine
 - mySQL
@@ -15,36 +15,34 @@ pour accéder au site il ne peut être qu'accessible qu'en local donc il vous fa
 - copier le  db.php.dist dans le dossier config
 - le renommer en db.php
 - dans le fichier db.php :
-
-define('APP_DB_USER', 'user');  remplacer 'user' par votre user de mySQL
-define('APP_DB_PASSWORD', 'password'); remplacer 'password' par votre password de mySQL
-define('APP_DB_HOST', 'localhost'); changé rien
-define('APP_DB_NAME', 'database_name'); remplacer 'database_name' par un nom de database que vous souhaitez
+  
+```php
+    define('APP_DB_USER', 'user');  remplacer 'user' par votre user de mySQL"
+    define('APP_DB_PASSWORD', 'password'); remplacer 'password' par votre password de mySQL"
+    define('APP_DB_HOST', 'localhost'); changer rien"
+    define('APP_DB_NAME', 'database_name'); remplacer 'database_name' par un nom de database que vous souhaitez"
+```
 
 - dans la console : php migration.php
 - dans la console : php -S localhost:8000 -t public
 
 ENJOY ! 
+----------------------------------------
+
+---------AMELIORATION EN COUR-----------
+- Responsive
+- Refaire la gestion des images (ajout des fichiers via pages admin)
+- revoir et renforcer les login
+- revoir reset password
+- incorporer un systeme de payment
+- revoir le formulaire de contact
+- 
+
+----------------------------------------
 
 
-# Simple MVC
 
-## For Windows Users
 
-:heavy_exclamation_mark: To do BEFORE CLONING REPOSITORY :heavy_exclamation_mark: :
-
-If you develop on Windows, edit your git configuration to change your end of line rules with this command :
-
-`git config --global core.autocrlf true`
-
-Then clone this Repository safely :white_check_mark:
-
-## Description
-
-This repository is a simple PHP MVC structure from scratch.
-
-It uses some cool vendors/libraries such as Twig and Grumphp.
-For this one, just a simple example where users can choose one of their databases and see tables in it.
 
 ## Steps
 
@@ -64,34 +62,10 @@ define('APP_DB_PASSWORD', 'your_db_password');
 6. Go to `localhost:8000` with your favorite browser.
 7. From this starter kit, create your own web application.
 
-## Example
 
-An example (a basic list of items) is provided (you can load the _simple-mvc.sql_ file in a test database). The accessible URLs are :
 
--   Home page at [localhost:8000/](localhost:8000/)
--   Items list at [localhost:8000/items](localhost:8000/items)
--   Item details [localhost:8000/items/show?id=:id](localhost:8000/item/show?id=2)
--   Item edit [localhost:8000/items/edit?id=:id](localhost:8000/items/edit?id=2)
--   Item add [localhost:8000/items/add](localhost:8000/items/add)
--   Item deletion [localhost:8000/items/delete?id=:id](localhost:8000/items/delete?id=2)
 
-You can find all these routes declared in the file `src/routes.php`. This is the very same file where you'll add your own new routes to the application.
 
-## How does URL routing work ?
-
-![simple_MVC.png](.tours/simple_MVC.png)
-
-## Ask for a tour !
-
-<img src="./.tours/photo-1632178151697-fd971baa906f.jpg" alt="Guided tour" width="150"/>
-
-We prepare a little guided tour to start with the simple-MVC.
-
-To take it, you need to install the `Code Tour` extension for Visual Studio Code : [Code Tour](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour)
-
-It will give access to a new menu on your IDE where you'll find the different tours about the simple-MVC. Click on play to start one :
-
-![menu](.tours/code_tour_menu.png)
 
 ## Run it on docker
 
